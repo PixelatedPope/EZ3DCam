@@ -1,0 +1,1 @@
+return EZ3D.camera_rotation_mode;
