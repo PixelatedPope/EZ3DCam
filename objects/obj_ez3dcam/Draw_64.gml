@@ -1,5 +1,5 @@
 ///// @description Draw Debug Text
-exit;
+/*exit;
 
 var _scale = window_get_width()/display_get_gui_width();
 _scale *=2;

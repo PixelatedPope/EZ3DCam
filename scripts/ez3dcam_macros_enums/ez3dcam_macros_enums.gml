@@ -7,17 +7,19 @@ enum EZ3DCam
 	mode_track_target,
 	rotation_local,
 	rotation_world,
+	render_target_default,
+	render_target_surface
 }
 #endregion 
 
 //Debug
-#macro EZ3D obj_ez3dcam
-#macro EZ3D_ENABLE if(!instance_exists(EZ3D)) instance_create_depth(0,0,0,EZ3D)
 
 //Vectors
 #macro vX 0
 #macro vY 1
 #macro vZ 2
+#macro vU 2
+#macro vW 3
 
 //Common Vector Shortcuts
 #macro vZERO [0,0,0]

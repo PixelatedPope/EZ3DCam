@@ -1,6 +1,16 @@
  ///  @description Properties
+#macro EZ3D obj_ez3dcam
+#macro EZ3D_ENABLE if(!instance_exists(EZ3D)) instance_create_depth(0,0,0,EZ3D)
+
 #region Camera and Projection
+prev_view_width = 0;
+prev_view_height = 0;
 camera_mode = EZ3DCam.mode_first_person;
+camera_width = undefined;
+camera_height = undefined;
+camera_surface = undefined;
+camera_surface_bg_color = c_black;
+camera_surface_bg_alpha = 1;
 
 camera_target = vZERO;
 camera_position = vZERO;

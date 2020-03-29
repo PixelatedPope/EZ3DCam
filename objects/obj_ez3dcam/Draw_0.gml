@@ -1,11 +1,23 @@
 /// @description Draw 3D
-var _view = 0;
+var _cam = view_camera[0];
+var _ortho_view_mat = camera_get_view_mat(_cam);
+var _ortho_proj_mat = camera_get_proj_mat(_cam);
+event_user(0); //Build View and Matrix Projections
+
 draw_set_color(c_white);
+if(camera_surface != undefined)
+{
+	if(!surface_exists(camera_surface))
+		camera_surface = surface_create(camera_width, camera_height);
+	surface_set_target(camera_surface);
+	draw_clear_alpha(camera_surface_bg_color,camera_surface_bg_alpha);
+}
+
 
 #region 3D Projection Setup
-camera_set_view_mat(view_camera[_view], view_matrix);
-camera_set_proj_mat(view_camera[_view], proj_matrix);
-camera_apply(view_camera[_view]);
+camera_set_view_mat(_cam, view_matrix);
+camera_set_proj_mat(_cam, proj_matrix);
+camera_apply(_cam);
 #endregion
 
 #region Draw 3D Objects
@@ -14,24 +26,26 @@ gpu_set_alphatestref(254);
 gpu_set_zwriteenable(true);
 
 shader_set(shd_default);
-with(int_3d_object)
+with(par_3d_object)
 {
 	event_perform(ev_draw,0);
 }
 shader_reset();
 #endregion
 
+if(camera_surface != undefined) 
+	surface_reset_target();
+
 #region//Reset back to Ortho
 gpu_set_ztestenable(false);
 gpu_set_zwriteenable(false);
 matrix_set(matrix_world,matrix_build_identity()); 
 
-var _viewmat = matrix_build_lookat(View_Width/2, View_Height/2, -10, View_Width/2, View_Height/2, 0, 0, 1, 0);
-var _projmat = matrix_build_projection_ortho(View_Width,View_Height, 1.0, 32000.0);
+_ortho_proj_mat[5] = abs(_ortho_proj_mat[5]); //Why?  Because GM is kinda dumb.
+camera_set_view_mat(_cam, _ortho_view_mat);
+camera_set_proj_mat(_cam, _ortho_proj_mat);
+camera_set_view_size(_cam, prev_view_width, prev_view_height);
+camera_apply(_cam);
 
-camera_set_view_mat(view_camera[_view], _viewmat);
-camera_set_proj_mat(view_camera[_view], _projmat);
-
-camera_apply(view_camera[_view]);
 #endregion
 timer++;

@@ -1,8 +1,8 @@
 {
-    "id": "f975dabd-8042-46f1-9d8a-bc2aaeabb8f5",
+    "id": "ed29b0a1-b615-4955-bf0f-d949c295faa8",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "gmode7_macros_enums",
+    "name": "ez3dcam_set_camera_size",
     "IsCompatibility": false,
     "IsDnD": false
 }

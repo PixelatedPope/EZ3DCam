@@ -1,5 +1,12 @@
 /// @description Rebuild Camera Matrix
-camera_set_view_size(view_camera[0],View_Width,View_Height);
+prev_view_width = camera_get_view_width(view_camera[0]);
+prev_view_height = camera_get_view_height(view_camera[0]);
+
+if(camera_width != undefined && camera_height != undefined)
+	camera_set_view_size(view_camera[0],camera_width,camera_height);
+
+var _vw = camera_get_view_width(view_camera[0]);
+var _vh = camera_get_view_height(view_camera[0]);
 
 switch(camera_mode)
 {
@@ -98,9 +105,9 @@ switch(camera_mode)
 	#endregion
 }
 														 
-var _up = matrix_combine(matrix_build_translation(camera_up),camera_angle_matrix);
-var _aspect = View_Width / View_Height;
-var _pos = camera_position;
+var _up = matrix_combine(matrix_build_translation(camera_up),camera_angle_matrix),
+		_aspect = _vw/_vh,
+		_pos = camera_position;
 view_matrix = matrix_build_lookat(_pos[vX], _pos[vY], _pos[vZ],
 								                  _pos[vX] + camera_direction[vX], _pos[vY] + camera_direction[vY], _pos[vZ] + camera_direction[vZ],
 								                  _up[mX],_up[mY],_up[mZ]);											 

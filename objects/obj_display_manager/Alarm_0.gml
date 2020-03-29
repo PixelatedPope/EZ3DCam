@@ -1,4 +1,2 @@
-/// @description Center Window
+///@description Center the resized window
 window_center();
-
-
