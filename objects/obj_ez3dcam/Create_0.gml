@@ -1,6 +1,6 @@
  ///  @description Properties
 #macro EZ3D obj_ez3dcam
-#macro EZ3D_ENABLE if(!instance_exists(EZ3D)) instance_create_depth(0,0,0,EZ3D)
+#macro EZ3D_ENABLE if(!instance_exists(EZ3D)) instance_create_depth(0,0,depth,EZ3D)
 
 #region Camera and Projection
 prev_view_width = 0;
@@ -32,7 +32,7 @@ camera_has_moved = true;
 proj_matrix = [];
 view_matrix = [];
 
-zfar = max(room_width,room_height);
+zfar = 10000;
 fov = 45;
 #endregion
 
