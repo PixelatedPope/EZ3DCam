@@ -12,8 +12,8 @@ EZ3D_ENABLE; //Enables EZ3D at this object's depth.
 gpu_set_cullmode(cull_noculling);
 
 //Our 3D Objects for this example.  
-//For more information on how they are created and manipulated, check out the object.
-instance_create_depth(500,0,0,obj_castle); 
+//For more information on it is created and manipulated, check out the object.
+instance_create_depth(700,0,0,obj_tower); 
 
 //Want to render the 3D element to a surface?
 //Uncomment the below line, and the related line in the draw event.

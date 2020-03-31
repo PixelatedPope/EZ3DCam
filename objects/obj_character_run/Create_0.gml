@@ -1,2 +1,3 @@
 /// @description
-draw_self();
+x=-50
+spd=3.5;

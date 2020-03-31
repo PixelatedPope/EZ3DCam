@@ -191,6 +191,14 @@
             }
         },
         {
+            "Key": "2a3469f9-348f-4f66-9026-9b17025c65ae",
+            "Value": {
+                "id": "b6dca7b7-762f-49e6-84c4-6152df82dfeb",
+                "resourcePath": "sprites\\spr_bg_sky\\spr_bg_sky.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "2e079d61-7d2e-4d4a-84db-d62342652ed1",
             "Value": {
                 "id": "32348c4e-635b-48d6-aded-cd7b555d5068",
@@ -228,6 +236,14 @@
                 "id": "c4f58eb0-8a42-4d80-975a-234ec4c46577",
                 "resourcePath": "scripts\\ez3dcam_get_direction_right\\ez3dcam_get_direction_right.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "31fe5b1f-4f52-4554-9771-699db3a259d9",
+            "Value": {
+                "id": "d9459ca4-ba08-4a4e-ba40-a3073741905b",
+                "resourcePath": "sprites\\spr_tiles\\spr_tiles.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -316,6 +332,14 @@
                 "id": "ad9162ea-6f48-462c-b621-aaa5d7f10b13",
                 "resourcePath": "sprites\\spr_ap_pc_run\\spr_ap_pc_run.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "47d18cc5-8f49-479e-8ca6-ead2ea42c047",
+            "Value": {
+                "id": "73e70fb2-bed2-42a6-917b-03da0fcd516a",
+                "resourcePath": "tilesets\\tl_castle\\tl_castle.yy",
+                "resourceType": "GMTileSet"
             }
         },
         {
@@ -647,6 +671,14 @@
             }
         },
         {
+            "Key": "ae413e0a-d148-4b76-91af-e0cfcd9bf4bd",
+            "Value": {
+                "id": "943b235d-2a36-44d5-be55-c483fbe84357",
+                "resourcePath": "objects\\obj_glow_streak\\obj_glow_streak.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "b1083fa3-1558-4afc-ab8f-b06b273da165",
             "Value": {
                 "id": "de62d554-028b-4fd7-a9da-bfe8085f3909",
@@ -954,7 +986,7 @@
             "Key": "f7a024ce-2308-4fa2-ba93-e7d0834122ca",
             "Value": {
                 "id": "a52e388c-9994-4ae1-acbf-962bf000cf14",
-                "resourcePath": "objects\\obj_castle\\obj_castle.yy",
+                "resourcePath": "objects\\obj_tower\\obj_tower.yy",
                 "resourceType": "GMObject"
             }
         },
