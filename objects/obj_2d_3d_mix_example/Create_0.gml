@@ -9,6 +9,8 @@ EZ3D_ENABLE; //Enables EZ3D at this object's depth.
   left (-) and right(+).
 */
 
+gpu_set_cullmode(cull_noculling);
+
 //Our 3D Objects for this example.  
 //For more information on how they are created and manipulated, check out the object.
 instance_create_depth(500,0,0,obj_castle); 

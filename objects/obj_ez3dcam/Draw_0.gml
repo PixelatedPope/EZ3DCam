@@ -22,7 +22,8 @@ camera_apply(_cam);
 
 #region Draw 3D Objects
 gpu_set_ztestenable(true);
-gpu_set_alphatestref(254);
+gpu_set_alphatestenable(true);
+//gpu_set_alphatestref(250);
 gpu_set_zwriteenable(true);
 
 shader_set(shd_default);
@@ -39,6 +40,7 @@ if(camera_surface != undefined)
 #region//Reset back to Ortho
 gpu_set_ztestenable(false);
 gpu_set_zwriteenable(false);
+gpu_set_alphatestenable(false);
 matrix_set(matrix_world,matrix_build_identity()); 
 
 _ortho_proj_mat[5] = abs(_ortho_proj_mat[5]); //Why?  Because GM is kinda dumb.
