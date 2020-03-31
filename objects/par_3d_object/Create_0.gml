@@ -6,4 +6,5 @@ scale = vONE;
 rotation = vZERO;
 visible = false;
 vertex = noone;
+primitive_type = pr_trianglelist;
 texture = sprite_get_texture(sprite_index,0);
