@@ -2,6 +2,6 @@
 ///@param height
 with(EZ3D)
 {
-	camera_width=argument0;
-	camera_height=argument1;
+	camera_width = argument0;
+	camera_height = argument1;
 }

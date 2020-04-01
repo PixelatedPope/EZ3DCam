@@ -8,14 +8,14 @@ EZ3D_ENABLE; //Enables EZ3D at this object's depth.
   at any x position greater than 0.  Adjusting their y position will shift them
   left (-) and right(+).
 */
-
 gpu_set_cullmode(cull_noculling);
 
 //Our 3D Objects for this example.  
 //For more information on it is created and manipulated, check out the object.
 instance_create_depth(700,0,0,obj_tower); 
 
-//Want to render the 3D element to a surface?
-//Uncomment the below line, and the related line in the draw event.
-//ez3dcam_set_render_target(EZ3DCam.render_target_surface,200,200,c_black,.5);
+//Want to change how the 3D is rendered?
+//Uncomment the below line.
+//Set the last argument to false and uncomment the line in the draw event.
+//ez3dcam_set_render_target(200,100,c_black,0,true);
 //Play with the size and color/alpha options!

@@ -1,17 +1,21 @@
 /// @description Draw 3D
 var _cam = view_camera[0];
+var _vw = camera_get_view_width(_cam);
+var _vh = camera_get_view_height(_cam);
 var _ortho_view_mat = camera_get_view_mat(_cam);
 var _ortho_proj_mat = camera_get_proj_mat(_cam);
+var _surf_width = ez3dcam_get_width();
+var _surf_height = ez3dcam_get_height();
+var _scale = _vw/_surf_width;
+
 event_user(0); //Build View and Matrix Projections
 
 draw_set_color(c_white);
-if(camera_surface != undefined)
-{
-	if(!surface_exists(camera_surface))
-		camera_surface = surface_create(camera_width, camera_height);
-	surface_set_target(camera_surface);
-	draw_clear_alpha(camera_surface_bg_color,camera_surface_bg_alpha);
-}
+
+if(!surface_exists(camera_surface))
+	camera_surface = surface_create(_surf_width,_surf_height);
+surface_set_target(camera_surface);
+draw_clear_alpha(camera_surface_bg_color,camera_surface_bg_alpha);
 
 
 #region 3D Projection Setup
@@ -34,8 +38,7 @@ with(par_3d_object)
 shader_reset();
 #endregion
 
-if(camera_surface != undefined) 
-	surface_reset_target();
+surface_reset_target();
 
 #region//Reset back to Ortho
 gpu_set_ztestenable(false);
@@ -50,4 +53,9 @@ camera_set_view_size(_cam, prev_view_width, prev_view_height);
 camera_apply(_cam);
 
 #endregion
+
+//Finally, draw the 3D
+if(camera_draw_surface)
+  draw_surface_ext(camera_surface,camera_get_view_x(_cam),camera_get_view_y(_cam),_scale,_scale,0,c_white,1);
+
 timer++;

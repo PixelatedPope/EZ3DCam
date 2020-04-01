@@ -8,9 +8,10 @@ prev_view_height = 0;
 camera_mode = EZ3DCam.mode_first_person;
 camera_width = undefined;
 camera_height = undefined;
-camera_surface = undefined;
+camera_surface = noone;
+camera_draw_surface = true;
 camera_surface_bg_color = c_black;
-camera_surface_bg_alpha = 1;
+camera_surface_bg_alpha = 0;
 
 camera_target = vZERO;
 camera_position = vZERO;

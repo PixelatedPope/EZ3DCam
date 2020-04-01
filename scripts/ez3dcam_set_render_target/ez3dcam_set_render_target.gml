@@ -1,25 +1,14 @@
-///@param EZ3dCam.render_target_
-///@param width
-///@param height
-///@param surface_bg_color
-///@param surface_bg_alpha
+///@param width (same as view: -1)
+///@param height (same as view: -1)
+///@param surface_bg_color (default: c_black)
+///@param surface_bg_alpha (default: 0);
+///@param automatic_drawing_enabled (default: true)
 
 with(EZ3D)
 {
-	if(argument0 == EZ3DCam.render_target_default)
-	{
-		camera_width = undefined;
-		camera_height = undefined;
-		if(camera_surface != undefined && surface_exists(camera_surface))
-			surface_free(camera_surface);
-		camera_surface = undefined;
-	}
-	else
-	{
-		camera_width = argument1;
-		camera_height = argument2;
-		camera_surface = noone;
-		camera_surface_bg_color = argument3;
-		camera_surface_bg_alpha = argument4;
-	}
+	camera_width = argument0 == -1 ? undefined : argument0;
+	camera_height = argument1 == -1 ? undefined : argument1;
+	camera_surface_bg_color = argument2;
+  camera_surface_bg_alpha = argument3;
+  camera_draw_surface = argument4;
 }

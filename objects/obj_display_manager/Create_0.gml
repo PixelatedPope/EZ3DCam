@@ -2,7 +2,7 @@
 draw_set_font(fnt_default);
 follow_target = noone;
 
-window_scale_max = max(1,floor(disp_w/base_width)-1);  
+window_scale_max = max(1,floor(disp_w/base_width));  
 window_scale = window_scale_max;
 window_set_size(base_width*window_scale,base_height*window_scale);
 surface_resize(application_surface,base_width*window_scale,base_height*window_scale);
