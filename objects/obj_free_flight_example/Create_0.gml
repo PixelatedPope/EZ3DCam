@@ -1,6 +1,5 @@
 /// @description
-
-EZ3D_ENABLE;
+ez3dcam_enable();
 ez3dcam_set_zfar(10000);
 ez3dcam_set_position([5000,5000,-50]);
 ez3dcam_change_orientation(45,0,0);

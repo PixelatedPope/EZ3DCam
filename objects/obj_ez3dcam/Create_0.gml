@@ -1,6 +1,6 @@
  ///  @description Properties
 #macro EZ3D obj_ez3dcam
-#macro EZ3D_ENABLE if(!instance_exists(EZ3D)) instance_create_depth(0,0,depth,EZ3D)
+
 
 #region Camera and Projection
 prev_view_width = 0;
@@ -43,5 +43,7 @@ vertex_format_add_position_3d();
 vertex_format_add_colour();
 vertex_format_add_texcoord();
 vertex_format = vertex_format_end();
+shader = shd_default;
+instance_register = ds_list_create();
 
 timer=0;

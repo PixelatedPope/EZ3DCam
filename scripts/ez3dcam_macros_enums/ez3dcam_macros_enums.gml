@@ -1,4 +1,4 @@
-#region GMode7 Enum: The enum to end all enums!
+//EZ3DCam
 enum EZ3DCam
 { 
 	//Camera
@@ -7,19 +7,14 @@ enum EZ3DCam
 	mode_track_target,
 	rotation_local,
 	rotation_world,
-	render_target_default,
-	render_target_surface
 }
-#endregion 
-
-//Debug
 
 //Vectors
 #macro vX 0
 #macro vY 1
 #macro vZ 2
 #macro vU 2
-#macro vW 3
+#macro vV 3
 
 //Common Vector Shortcuts
 #macro vZERO [0,0,0]

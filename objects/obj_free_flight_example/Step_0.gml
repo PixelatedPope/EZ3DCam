@@ -2,7 +2,7 @@
 window_set_caption("FPS: "+string(fps));
 
 //Zoom in and out
-ez3dcam_set_fov(ez3dcam_get_fov()+(mouse_wheel_down()-mouse_wheel_up())*3);
+ez3dcam_change_fov((mouse_wheel_down()-mouse_wheel_up())*3);
 
 var _yaw = keyboard_check(ord("E"))-keyboard_check(ord("Q"));
 var _pitch  = keyboard_check(ord("S"))-keyboard_check(ord("W"));

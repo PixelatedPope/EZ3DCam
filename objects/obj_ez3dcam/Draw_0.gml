@@ -30,10 +30,12 @@ gpu_set_alphatestenable(true);
 //gpu_set_alphatestref(250);
 gpu_set_zwriteenable(true);
 
-shader_set(shd_default);
-with(par_3d_object)
+shader_set(shader);
+for(var _i=0; _i< ds_list_size(instance_register); _i++)
 {
-	event_perform(ev_draw,0);
+  with(instance_register[| _i])
+  	event_perform(ev_draw,0);
+
 }
 shader_reset();
 #endregion

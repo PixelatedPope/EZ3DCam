@@ -7,6 +7,7 @@ _str += "\nMove/Strafe: Arrow Keys";
 _str += "\nJump: Space";
 _str += "\nFov: Mouse Wheel";
 _str += "\n\nReset: Backspace";
+_str += "\nEnter: Next Demo";
 
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);

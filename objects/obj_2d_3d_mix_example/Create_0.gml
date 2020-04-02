@@ -1,5 +1,5 @@
 /// @description
-EZ3D_ENABLE; //Enables EZ3D at this object's depth.
+ez3dcam_enable(); //Enables EZ3D at this object's depth.
 /*All the EZ3DCam settings are "default" right now.  
   This is a basic First Person camera at 0,0,0 looking "right".
   But what is "right"?

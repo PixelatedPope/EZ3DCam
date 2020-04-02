@@ -55,14 +55,6 @@
             }
         },
         {
-            "Key": "0550cc31-068e-425c-a522-30df065335a6",
-            "Value": {
-                "id": "74fc2dd2-00e9-46a8-b8de-140f9c9db47c",
-                "resourcePath": "shaders\\shd_gmode7\\shd_gmode7.yy",
-                "resourceType": "GMShader"
-            }
-        },
-        {
             "Key": "07861f27-2b05-4df3-9b8e-9eff09ed0c0b",
             "Value": {
                 "id": "6682be50-2d48-4731-bc98-53dec8dc792a",
@@ -455,6 +447,14 @@
             }
         },
         {
+            "Key": "6d315af1-1f6a-408e-8cd7-10c282456173",
+            "Value": {
+                "id": "e13aea41-9c0d-4476-9556-eb4569f72466",
+                "resourcePath": "scripts\\ez3dcam_register_instance\\ez3dcam_register_instance.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "6fb64d4a-4c20-4326-b610-3f5910bc9926",
             "Value": {
                 "id": "1d5f2e2c-907e-423a-8524-6e743d0a270b",
@@ -547,6 +547,14 @@
             "Value": {
                 "id": "e2c46ef4-73f6-4f38-bc06-86435be0fd9d",
                 "resourcePath": "views\\7c2ff989-24ab-4385-b369-8d93631754ce.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "7ebce511-fafa-4c44-ab5c-99dd7250fba4",
+            "Value": {
+                "id": "922ad753-9f85-4548-b26b-a711ba2f7d30",
+                "resourcePath": "views\\7ebce511-fafa-4c44-ab5c-99dd7250fba4.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -999,6 +1007,14 @@
             }
         },
         {
+            "Key": "e9b8a9b9-70b6-4bbe-86f1-ae6e80a66ffb",
+            "Value": {
+                "id": "5271cf38-737e-4872-a7ce-7bca2a8ad677",
+                "resourcePath": "scripts\\ez3dcam_enable\\ez3dcam_enable.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ea26b233-b3f5-4b5c-a519-e6fee43b6762",
             "Value": {
                 "id": "2e3e7e30-eaa6-4752-8ccc-0e99267db20f",
@@ -1018,7 +1034,7 @@
             "Key": "ed29b0a1-b615-4955-bf0f-d949c295faa8",
             "Value": {
                 "id": "09749a58-3105-4d1c-8c17-6537dcdf18ed",
-                "resourcePath": "scripts\\ez3dcam_set_camera_size\\ez3dcam_set_camera_size.yy",
+                "resourcePath": "scripts\\ez3dcam_set_size\\ez3dcam_set_size.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -1087,6 +1103,14 @@
             }
         },
         {
+            "Key": "fcd02972-2ac9-4248-bbea-bc142af49455",
+            "Value": {
+                "id": "7b47b292-723e-4475-8a77-1dcd625ab573",
+                "resourcePath": "scripts\\ez3dcam_unregister_instance\\ez3dcam_unregister_instance.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "fd66b3d0-0a59-4655-9c21-d0e69257beb2",
             "Value": {
                 "id": "d9c978ce-4428-4528-b337-5f6136450d4d",
@@ -1098,6 +1122,9 @@
     "script_order": [
         "a09ff9b5-0474-40b1-8c8d-f1ae2be06537",
         "f975dabd-8042-46f1-9d8a-bc2aaeabb8f5",
+        "e9b8a9b9-70b6-4bbe-86f1-ae6e80a66ffb",
+        "cbb90f30-2ef7-4777-9d14-142b5fa086a8",
+        "ed29b0a1-b615-4955-bf0f-d949c295faa8",
         "c6d2d097-a1db-4aab-8ae3-e9253cdb44c5",
         "dd7dd457-83fd-49ad-890e-8b068d0dc9d0",
         "b52cc210-6bb9-49af-a07b-28dd0a8ad435",
@@ -1115,7 +1142,6 @@
         "979860ac-dba9-4d06-a4ea-a16d5db5e14c",
         "78c9f945-a742-44a3-b38b-d1f1c42ebac2",
         "1a86b39e-9797-4af8-963a-071e965c9263",
-        "ed29b0a1-b615-4955-bf0f-d949c295faa8",
         "db91811c-d473-4b1b-9e0c-0804122551e5",
         "b1083fa3-1558-4afc-ab8f-b06b273da165",
         "c87774a0-d463-4da1-8e52-676b8af84dc8",
@@ -1125,7 +1151,6 @@
         "0d98e943-8473-4a44-bd7e-cb8a5b027590",
         "23fdac9b-4a22-4608-b39e-c03f58187518",
         "3aff75e2-8e50-4b4d-a552-370ef6e9919c",
-        "cbb90f30-2ef7-4777-9d14-142b5fa086a8",
         "138eb28c-6c50-45f0-8065-b1ce595a3b5b",
         "71c93535-bfae-48a3-b730-9500db2c3a70",
         "4935ae6a-5cae-41c2-a24b-7a11ec5a3ee1",
@@ -1151,6 +1176,8 @@
         "cb9bc0de-c7d4-4cf0-b3ed-61c6f36112cb",
         "c43344be-f5df-405c-92ba-9c708d7bda4a",
         "c053e25c-7842-4c29-811a-1ede48826a46",
+        "6d315af1-1f6a-408e-8cd7-10c282456173",
+        "fcd02972-2ac9-4248-bbea-bc142af49455",
         "9010aec9-1089-42b6-ba69-c422f5862e0e",
         "07861f27-2b05-4df3-9b8e-9eff09ed0c0b",
         "56ad6409-638a-457a-a949-325f8974ad84",

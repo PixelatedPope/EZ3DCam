@@ -1,5 +1,5 @@
 /// @description
-EZ3D_ENABLE;
+ez3dcam_enable();
 z_floor = -30;
 z_speed = 0;
 turn_speed = 2;
