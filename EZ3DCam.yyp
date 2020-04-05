@@ -439,6 +439,14 @@
             }
         },
         {
+            "Key": "6b73a2e5-ad35-4813-99d0-2e166d9da949",
+            "Value": {
+                "id": "d0671d46-cc34-461a-94c6-7f2fd2d10f25",
+                "resourcePath": "sprites\\spr_char_shadow\\spr_char_shadow.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "6cef8e2a-9d2b-4dc1-8ff6-74d470260f35",
             "Value": {
                 "id": "2f1c399c-191c-44e9-ab06-223ebc80ab7a",
@@ -516,6 +524,14 @@
                 "id": "f0040dd4-9492-4c65-8605-58acec02a001",
                 "resourcePath": "scripts\\vertex_buffer_create_cylinder\\vertex_buffer_create_cylinder.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "77568755-a510-4de7-9776-124a6eb70476",
+            "Value": {
+                "id": "50061f82-1376-4a91-a489-f1107ebf6d9d",
+                "resourcePath": "objects\\obj_3rd_person_example\\obj_3rd_person_example.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -607,11 +623,27 @@
             }
         },
         {
+            "Key": "8db0ecb6-faf6-4c8d-a0b5-9786f1b20284",
+            "Value": {
+                "id": "037370fb-8485-40f4-bfbd-8766c8043db1",
+                "resourcePath": "objects\\obj_character\\obj_character.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "9010aec9-1089-42b6-ba69-c422f5862e0e",
             "Value": {
                 "id": "70de2a3a-4e97-40f5-9e38-40736641d0e0",
                 "resourcePath": "scripts\\round_n\\round_n.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "903ff7ab-5f18-4c92-addc-0cefce105b15",
+            "Value": {
+                "id": "78800c48-fc69-4f17-b4a8-0da683345f98",
+                "resourcePath": "views\\903ff7ab-5f18-4c92-addc-0cefce105b15.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -735,6 +767,22 @@
             }
         },
         {
+            "Key": "a9a4ee57-687f-4019-996a-cbfd4ea9762e",
+            "Value": {
+                "id": "7ff4b582-d2ef-482b-a405-eee7d23563c4",
+                "resourcePath": "sprites\\spr_char_north\\spr_char_north.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "b07e96fe-e212-4ec0-bfea-64c57848823c",
+            "Value": {
+                "id": "fdaad62f-89f6-4aae-ac79-89c25503c934",
+                "resourcePath": "rooms\\rm_3rd_person_example\\rm_3rd_person_example.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "b1083fa3-1558-4afc-ab8f-b06b273da165",
             "Value": {
                 "id": "de62d554-028b-4fd7-a9da-bfe8085f3909",
@@ -828,6 +876,14 @@
                 "id": "299580d0-8afc-4f69-b299-c71505c3b019",
                 "resourcePath": "scripts\\vec3_normalize\\vec3_normalize.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c4aa7692-b2b1-46ec-87de-bbbaebf1e2d2",
+            "Value": {
+                "id": "ee71cc3b-f912-4d84-9cac-0371e4914cce",
+                "resourcePath": "sprites\\spr_char_east\\spr_char_east.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -991,6 +1047,14 @@
             }
         },
         {
+            "Key": "dfdc5d37-0032-4a0f-9e9e-e712f3297f5f",
+            "Value": {
+                "id": "11041b09-e09b-4189-91f5-256e2aaad458",
+                "resourcePath": "sprites\\spr_char_south\\spr_char_south.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "e42bf5cc-3f46-4d67-a6d0-a4885a11ac3f",
             "Value": {
                 "id": "b23208b7-c2f1-4eb0-8624-36b876958c0b",
@@ -1060,6 +1124,14 @@
                 "id": "71798abc-5042-4630-9dbc-1794a739752f",
                 "resourcePath": "options\\mac\\options_mac.yy",
                 "resourceType": "GMMacOptions"
+            }
+        },
+        {
+            "Key": "f4de230b-84e7-445b-accd-950f3c74c248",
+            "Value": {
+                "id": "ddd66698-9140-4b2f-833b-52a3f5bde4ba",
+                "resourcePath": "scripts\\ez3dcam_get_orientation\\ez3dcam_get_orientation.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -1146,6 +1218,7 @@
         "b1083fa3-1558-4afc-ab8f-b06b273da165",
         "c87774a0-d463-4da1-8e52-676b8af84dc8",
         "bea8ebde-4836-410a-b241-df5074366286",
+        "f4de230b-84e7-445b-accd-950f3c74c248",
         "8c9310e2-62f5-409e-b245-ff7e1cdd3159",
         "5c30db5e-d4cb-4345-91e9-d198b4f30d5c",
         "0d98e943-8473-4a44-bd7e-cb8a5b027590",

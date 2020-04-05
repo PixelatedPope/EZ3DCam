@@ -15,7 +15,7 @@ throttle = clamp(throttle,0,5);
 var _forward = vec3_scale(ez3dcam_get_direction(),throttle);
 
 ez3dcam_change_position(_forward);
-ez3dcam_change_orientation(_yaw,_pitch,_roll);
+ez3dcam_change_orientation([_yaw,_pitch,_roll]);
 
 	
 	

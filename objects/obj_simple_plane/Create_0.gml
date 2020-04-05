@@ -7,8 +7,8 @@ rotation = [0,0,-90] // -90 to face the camera which.
 //3D "models".  This is an example of a simple textured plane
 //made up of two triangles.  
 
-var _w = sprite_get_width(spr_ground)/2,
-    _h = sprite_get_height(spr_ground)/2,
+var _w = sprite_get_width(sprite_index)/2,
+    _h = sprite_get_height(sprite_index)/2,
     _uvs = sprite_get_uvs(sprite_index,0),
     _buff = vertex_create_buffer();
 

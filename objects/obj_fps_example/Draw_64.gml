@@ -1,5 +1,5 @@
 /// @description Draw Controls
-_scale = 1;
+var _scale = 1;
 draw_set_color(c_white);
 var _str = "";
 _str += "Rotation: A S D W";

@@ -1,6 +1,6 @@
 /// @description
 event_inherited();
-var _height = 500;
+var _height = 800;
 var _sides = 64;
 surf = noone;
 position=[x,y,250];

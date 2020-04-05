@@ -12,8 +12,7 @@ gpu_set_cullmode(cull_noculling);
 
 //Our 3D Objects for this example.  
 //For more information on it is created and manipulated, check out the object.
-instance_create_depth(700,0,0,obj_tower); 
-
+instance_create_depth(700,0,0,obj_tower);
 //Want to change how the 3D is rendered?
 //Uncomment the below line.
 //Set the last argument to false and uncomment the line in the draw event.

@@ -55,17 +55,17 @@ switch(ez3dcam_get_mode())
 	case EZ3DCam.mode_first_person:
 		ez3dcam_change_position(_move);
 		ez3dcam_set_rotation_mode(rotation_mode);
-		ez3dcam_change_orientation(_yaw,_pitch,_roll);
+		ez3dcam_change_orientation([_yaw,_pitch,_roll]);
 	break;
 	#endregion
 	
 	#region Third Person
 	case EZ3DCam.mode_third_person:
 		//Control Target
-		ez3dcam_set_distance_from_target(distance);
+		ez3dcam_set_distance_from_target(distance);	
 		ez3dcam_change_target_position(_move);
 		ez3dcam_set_rotation_mode(rotation_mode);
-		ez3dcam_change_orientation(_yaw,_pitch,_roll);
+		ez3dcam_change_orientation([_yaw,_pitch,_roll]);
 	break;
 	#endregion
 
@@ -74,7 +74,7 @@ switch(ez3dcam_get_mode())
 		//Control Target
 		var _spd = 5;
 		ez3dcam_change_target_position(_move);
-		ez3dcam_change_orientation(0,0,_roll);
+		ez3dcam_change_orientation([0,0,_roll]);
 	break;
 #endregion
 }

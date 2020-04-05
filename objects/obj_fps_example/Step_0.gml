@@ -30,16 +30,17 @@ else
 var _spd = 5;
 
 //Camera Relative Movement
-var _forward = vec3_scale(ez3dcam_get_direction(),_spd * _vert);
-var _right = vec3_scale(ez3dcam_get_direction_right(),_spd * _hori);
-var _up = vec3_scale(ez3dcam_get_direction_up(),z_speed);
+var _forward = ez3dcam_get_direction();
+var _right = ez3dcam_get_direction_right();
+var _up = [0,0,z_speed];
 
 //World Relative Movement
 _forward[vZ]=0;
 _right[vZ]=0;
-_up = [0,0,z_speed];
+_forward = vec3_scale(_forward,_spd * _vert);
+_right = vec3_scale(_right,_spd * _hori);
 
 var _move = vec3_add(_forward,_right,_up);
 
 ez3dcam_change_position(_move);
-ez3dcam_change_orientation(_yaw,_pitch,0);
+ez3dcam_change_orientation([_yaw,_pitch,0]);
