@@ -2,12 +2,14 @@
 
 event_inherited();
 rotation = [0,0,-90] // -90 to face the camera.
+face_dir=0;
 
+/*
 primitive_type = pr_trianglestrip;
 var _w = sprite_get_width(sprite_index)/2,
     _h = sprite_get_height(sprite_index);
 var _l=0,_t=1,_r=2,_b=3;
-face_dir=0;
+
 
 frames = ds_grid_create(4,3);
 vertex = noone;

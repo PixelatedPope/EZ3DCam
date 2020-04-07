@@ -7,7 +7,7 @@
         "0fc2008e-0956-46cf-8555-878af4e60000"
     ],
     "filterType": "GMObject",
-    "folderName": "EZ3DCam",
+    "folderName": "EZ3DCam - REQUIRED",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

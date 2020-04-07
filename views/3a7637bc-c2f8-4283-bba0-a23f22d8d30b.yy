@@ -15,7 +15,7 @@
         "fcd02972-2ac9-4248-bbea-bc142af49455"
     ],
     "filterType": "GMScript",
-    "folderName": "EZ3DCam",
+    "folderName": "EZ3DCam - REQUIRED",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

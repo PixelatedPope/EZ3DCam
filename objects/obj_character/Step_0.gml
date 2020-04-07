@@ -15,13 +15,12 @@ _forward = vec3_scale(_forward,_spd * _vert);
 _right = vec3_scale(_right,_spd * _hori);
 
 var _move = vec3_add(_forward,_right);//,_up);
-x+=_move[vX];
-y+=_move[vY];
+x+= _move[vX];
+y+= _move[vY];
 //z+=_move[vZ];
 
 z = -(floor(image_index) mod 2 == 0)*2;
-
-position=[x,y,z];
+position=[x,y,0];
 
 if(point_distance(0,0,_hori,_vert) > 0)
 	face_dir = point_direction(0,0,_move[vX],_move[vY]);
