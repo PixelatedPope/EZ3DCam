@@ -4,12 +4,8 @@ event_inherited();
 rotation = [0,0,-90] // -90 to face the camera.
 face_dir=0;
 
-/*
 primitive_type = pr_trianglestrip;
-var _w = sprite_get_width(sprite_index)/2,
-    _h = sprite_get_height(sprite_index);
 var _l=0,_t=1,_r=2,_b=3;
-
 
 frames = ds_grid_create(4,3);
 vertex = noone;
@@ -17,7 +13,10 @@ for(var _y=0; _y<3; _y++)
 {
 	for(var _x=0; _x<4; _x++)
 	{
-		var _uvs = sprite_get_uvs(spr_char_south+_y,_x),
+		
+		var _w = sprite_get_width(spr_char_south+_y)/2,
+		    _h = sprite_get_height(spr_char_south+_y),
+				_uvs = sprite_get_uvs(spr_char_south+_y,_x),
 				_buff = vertex_create_buffer();
 		vertex_begin(_buff,EZ3D.vertex_format);
 

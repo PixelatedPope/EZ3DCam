@@ -27,9 +27,8 @@ camera_apply(_cam);
 #region Draw 3D Objects
 gpu_set_ztestenable(true);
 gpu_set_alphatestenable(true);
-//gpu_set_alphatestref(250);
+gpu_set_alphatestref(250);
 gpu_set_zwriteenable(true);
-
 shader_set(shader);
 for(var _i=0; _i< ds_list_size(instance_register); _i++)
 {
@@ -37,6 +36,7 @@ for(var _i=0; _i< ds_list_size(instance_register); _i++)
   	event_perform(ev_draw,0);
 
 }
+gpu_set_fog(false,0,0,0);
 shader_reset();
 #endregion
 
