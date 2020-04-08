@@ -2,6 +2,7 @@
 #macro EZ3D obj_ez3dcam
 
 
+
 #region Camera and Projection
 prev_view_width = 0;
 prev_view_height = 0;
@@ -40,10 +41,10 @@ fov = 45;
 //Standard vertex format.  Feel free to replace with your own if necessary
 vertex_format_begin()
 vertex_format_add_position_3d();
+vertex_format_add_normal();
 vertex_format_add_colour();
 vertex_format_add_texcoord();
 vertex_format = vertex_format_end();
-shader = shd_default;
 instance_register = ds_list_create();
 
 timer=0;

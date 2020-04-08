@@ -13,7 +13,6 @@ switch(_dir)
 	case 180: sprite_index = spr_char_south; break;
 }
 
-
 texture = sprite_get_texture(sprite_index,image_index);
 vertex = frames[# floor(image_index),sprite_index-spr_char_south];
 

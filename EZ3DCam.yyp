@@ -63,6 +63,14 @@
             }
         },
         {
+            "Key": "07ebe1b0-0f14-410e-8fa2-0048e07b2eb1",
+            "Value": {
+                "id": "046d0fd7-8fca-4942-80b6-d15d6f1dd470",
+                "resourcePath": "sprites\\spr_blank_skybox\\spr_blank_skybox.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0889dbe5-68ab-492b-a71e-88f1ee439990",
             "Value": {
                 "id": "0c0f16bd-a5cd-4f73-a2cb-cdc574f7abe7",
@@ -188,6 +196,14 @@
                 "id": "795da91b-9afa-4e67-a1f9-48b61a5e964a",
                 "resourcePath": "rooms\\rm_2d_3d_mix\\rm_2d_3d_mix.yy",
                 "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "2941f427-41bd-42a0-999d-50b77b083393",
+            "Value": {
+                "id": "4e314593-9ee0-4e0c-a328-2c3b97c120f2",
+                "resourcePath": "sprites\\spr_skybox1\\spr_skybox1.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -1012,14 +1028,6 @@
                 "id": "1dd7f4a3-1329-4754-b5e1-650e0b52c59e",
                 "resourcePath": "scripts\\ez3dcam_set_fov\\ez3dcam_set_fov.yy",
                 "resourceType": "GMScript"
-            }
-        },
-        {
-            "Key": "dc51298d-8764-426c-aa1f-b115e9099a1d",
-            "Value": {
-                "id": "99bb7983-8340-4fb2-a307-34da1ac9fbff",
-                "resourcePath": "sprites\\spr_skybox\\spr_skybox.yy",
-                "resourceType": "GMSprite"
             }
         },
         {

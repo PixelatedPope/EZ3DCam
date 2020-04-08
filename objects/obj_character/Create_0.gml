@@ -46,7 +46,7 @@ for(var _y=0; _y<3; _y++)
 _h /= 2;
 _buff = vertex_create_buffer();
 _uvs = sprite_get_uvs(spr_char_shadow,0);
-var _alpha = .5;
+var _alpha = 1;
 vertex_begin(_buff,EZ3D.vertex_format);
 
 vertex_position_3d(_buff,-_w,-_h,0);

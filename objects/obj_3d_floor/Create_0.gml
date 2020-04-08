@@ -15,27 +15,33 @@ for(var _x = 0; _x+_w < _w*50; _x+=_w)
 	{
 		
 		vertex_position_3d(_buff,_x,_y,0);
+    vertex_normal(_buff,0,0,-1);
 		vertex_colour(_buff, c_white, 1);
 		vertex_texcoord(_buff, _uvs[0], _uvs[1]);
 		
 		vertex_position_3d(_buff,_x+_w,_y,0);
+    vertex_normal(_buff,0,0,-1);
 		vertex_colour(_buff, c_white, 1);
 		vertex_texcoord(_buff, _uvs[2], _uvs[1]);
 		
 		vertex_position_3d(_buff,_x,_y+_h,0);
+    vertex_normal(_buff,0,0,-1);
 		vertex_colour(_buff, c_white, 1);
 		vertex_texcoord(_buff, _uvs[0], _uvs[3]);
 		
 		
 		vertex_position_3d(_buff,_x+_w,_y+_w,0);
+    vertex_normal(_buff,0,0,-1);
 		vertex_colour(_buff, c_white, 1);
 		vertex_texcoord(_buff, _uvs[2], _uvs[3]);
 		
 		vertex_position_3d(_buff,_x,_y+_h,0);
+    vertex_normal(_buff,0,0,-1);
 		vertex_colour(_buff, c_white, 1);
 		vertex_texcoord(_buff, _uvs[0], _uvs[3]);
 
 		vertex_position_3d(_buff,_x+_w,_y,0);
+    vertex_normal(_buff,0,0,-1);
 		vertex_colour(_buff, c_white, 1);
 		vertex_texcoord(_buff, _uvs[2], _uvs[1]);
 		

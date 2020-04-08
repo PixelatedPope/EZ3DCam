@@ -44,130 +44,166 @@ vertex_begin(_buff, _format);
 ////DOWN-Z-------------------
 //1,2,3
 vertex_position_3d_vec(_buff,_p1);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[1],_v[1]);
 vertex_position_3d_vec(_buff,_p2);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[2],_v[1]);
 vertex_position_3d_vec(_buff,_p3);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff, _u[1],_v[2]);
 
 ///2,3,4
 vertex_position_3d_vec(_buff,_p2);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[2],_v[1]);
 vertex_position_3d_vec(_buff,_p3);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff, _u[1],_v[2]);
 vertex_position_3d_vec(_buff,_p4);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[2],_v[2]);
 
 ///RIGHT------------------------
 //1,2,6
 vertex_position_3d_vec(_buff,_p1);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[1],_v[1]);
 vertex_position_3d_vec(_buff,_p2);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff, _u[2],_v[1]);
 vertex_position_3d_vec(_buff,_p6);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[2],_v[0]);
 
 //1,6,5
 vertex_position_3d_vec(_buff,_p1);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[1],_v[1]);
 vertex_position_3d_vec(_buff,_p6);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff, _u[2],_v[0]);
 vertex_position_3d_vec(_buff,_p5);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[1],_v[0]);
 
 //1,3,7
 vertex_position_3d_vec(_buff,_p1);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[1],_v[1]);
 vertex_position_3d_vec(_buff,_p3);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff, _u[1],_v[2]);
 vertex_position_3d_vec(_buff,_p7);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[0],_v[2]);
 //1,5,7
 vertex_position_3d_vec(_buff,_p1);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[1],_v[1]);
 vertex_position_3d_vec(_buff,_p5);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff, _u[0],_v[1]);
 vertex_position_3d_vec(_buff,_p7);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[0],_v[2]);
 
 //3,4,7
 vertex_position_3d_vec(_buff,_p3);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[1],_v[2]);
 vertex_position_3d_vec(_buff,_p4);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff, _u[2],_v[2]);
 vertex_position_3d_vec(_buff,_p7);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[1],_v[3]);
 //4,8,7
 vertex_position_3d_vec(_buff,_p4);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[2],_v[2]);
 vertex_position_3d_vec(_buff,_p8);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff, _u[2],_v[3]);
 vertex_position_3d_vec(_buff,_p7);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[1],_v[3]);
 
 //2,6,4
 vertex_position_3d_vec(_buff,_p2);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[2],_v[1]);
 vertex_position_3d_vec(_buff,_p6);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff, _u[3],_v[1]);
 vertex_position_3d_vec(_buff,_p4);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[2],_v[2]);
 //4,8,6
 vertex_position_3d_vec(_buff,_p4);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[2],_v[2]);
 vertex_position_3d_vec(_buff,_p8);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff, _u[3],_v[2]);
 vertex_position_3d_vec(_buff,_p6);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[3],_v[1]);
 
 //6,5,8
 vertex_position_3d_vec(_buff,_p6);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[3],_v[1]);
 vertex_position_3d_vec(_buff,_p5);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff, _u[4],_v[1]);
 vertex_position_3d_vec(_buff,_p8);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[3],_v[2]);
 //8,7,5
 vertex_position_3d_vec(_buff,_p8);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[3],_v[2]);
 vertex_position_3d_vec(_buff,_p7);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff, _u[4],_v[2]);
 vertex_position_3d_vec(_buff,_p5);
+vertex_normal(_buff,0,0,0);
 vertex_color(_buff,_col,1);
 vertex_texcoord(_buff,_u[4],_v[1]);
 
