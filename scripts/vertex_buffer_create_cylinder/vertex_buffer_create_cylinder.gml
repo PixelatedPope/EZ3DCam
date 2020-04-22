@@ -40,6 +40,7 @@ for (_i = 0; _i <= _sides; _i++)
 										 _origin[0]+_cos[_i] * _top_rad, 
 										 _origin[1]+_sin[_i] * _top_rad, 
 										 _origin[2]-_height/2);
+  vertex_normal(_buff,_cos[_i],_sin[_i],0)
 	vertex_color(_buff,c_white,1);
 	vertex_texcoord(_buff,_u,_uvs[1]);
 
@@ -48,6 +49,7 @@ for (_i = 0; _i <= _sides; _i++)
 										 _origin[0]+_cos[_i] * _bot_rad, 
 										 _origin[1]+_sin[_i] * _bot_rad, 
 										 _origin[2]+_height/2);
+  vertex_normal(_buff,_cos[_i],_sin[_i],0)
 	vertex_color(_buff,c_white,1);
 	vertex_texcoord(_buff,_u,_uvs[1] + (_uvs[3]-_uvs[1])*_vrepeat);
 

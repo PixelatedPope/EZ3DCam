@@ -7,6 +7,7 @@ var _str = "";
 //_str += "\nCam Dir: "+string(point_direction(0,0,_cam[vX],_cam[vY]));
 _str += "Move: Arrows";
 _str += "\nCamera: A S D W";
+_str += "\nToggle Resolution: R";
 _str += "\n\nReset: Backspace";
 _str += "\nEnter: Next Demo";
 

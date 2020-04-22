@@ -8,12 +8,20 @@ var _h = sprite_get_height(spr_ground);
 var _uvs = sprite_get_uvs(sprite_index,0);
 
 var _buff = vertex_create_buffer();
+var _tile_count = 250;
+
+light_enabled = false;
+fog = true;
+fog_end = ez3dcam_get_zfar();
+fog_start = 500;
+fog_color = $a5866a;
+
 vertex_begin(_buff,EZ3D.vertex_format);
-for(var _x = 0; _x+_w < _w*50; _x+=_w)
+for(var _x = 0; _x+_w < _w*_tile_count; _x+=_w)
 {
-	for(var _y = 0; _y+_h < _h*50; _y+=_h)
+	for(var _y = 0; _y+_h < _h*_tile_count; _y+=_h)
 	{
-		
+		///vertex_buffer_build_tri(vbuff, x1,y1,z1,x2,y2,z2,x3,y3,z3,_col,_alpha,_uvs)
 		vertex_position_3d(_buff,_x,_y,0);
     vertex_normal(_buff,0,0,-1);
 		vertex_colour(_buff, c_white, 1);

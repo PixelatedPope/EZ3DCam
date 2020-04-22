@@ -12,3 +12,4 @@ fog = true;
 fog_start = 0;
 fog_end = 5000;
 fog_color = $D0B477;
+light_enabled = false;

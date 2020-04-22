@@ -21,18 +21,22 @@ for(var _y=0; _y<3; _y++)
 		vertex_begin(_buff,EZ3D.vertex_format);
 
 		vertex_position_3d(_buff,-_w,0,-_h);
+    vertex_normal(_buff,0,1,0);
 		vertex_colour(_buff, c_white, 1);
 		vertex_texcoord(_buff, _uvs[_l], _uvs[_t]);
 		
 		vertex_position_3d(_buff,_w,0,-_h);
+    vertex_normal(_buff,0,1,0);
 		vertex_colour(_buff, c_white, 1);
 		vertex_texcoord(_buff, _uvs[_r], _uvs[_t]);
 		
 		vertex_position_3d(_buff,-_w,0,0);
+    vertex_normal(_buff,0,1,0);
 		vertex_colour(_buff, c_white, 1);
 		vertex_texcoord(_buff, _uvs[_l], _uvs[_b]);
 		
 		vertex_position_3d(_buff,_w,0,0);
+    vertex_normal(_buff,0,1,0);
 		vertex_colour(_buff, c_white, 1);
 		vertex_texcoord(_buff, _uvs[_r], _uvs[_b]);
 		
@@ -50,18 +54,22 @@ var _alpha = 1;
 vertex_begin(_buff,EZ3D.vertex_format);
 
 vertex_position_3d(_buff,-_w,-_h,0);
+vertex_normal(_buff,0,0,1);
 vertex_colour(_buff, c_white, _alpha);
 vertex_texcoord(_buff, _uvs[_l], _uvs[_t]);
 		
 vertex_position_3d(_buff,_w,-_h,0);
+vertex_normal(_buff,0,0,1);
 vertex_colour(_buff, c_white, _alpha);
 vertex_texcoord(_buff, _uvs[_r], _uvs[_t]);
 		
 vertex_position_3d(_buff,-_w,_h,0);
+vertex_normal(_buff,0,0,1);
 vertex_colour(_buff, c_white, _alpha);
 vertex_texcoord(_buff, _uvs[_l], _uvs[_b]);
 		
 vertex_position_3d(_buff,_w,_h,0);
+vertex_normal(_buff,0,0,1);
 vertex_colour(_buff, c_white, _alpha);
 vertex_texcoord(_buff, _uvs[_r], _uvs[_b]);
 		

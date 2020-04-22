@@ -6,6 +6,7 @@ _str += "Rotation: A S D W";
 _str += "\nMove/Strafe: Arrow Keys";
 _str += "\nJump: Space";
 _str += "\nFov: Mouse Wheel";
+_str += "\nToggle Resolution: R";
 _str += "\n\nReset: Backspace";
 _str += "\nEnter: Next Demo";
 

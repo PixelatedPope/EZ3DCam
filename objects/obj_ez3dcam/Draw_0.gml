@@ -14,8 +14,8 @@ draw_set_color(c_white);
 
 if(!surface_exists(camera_surface))
 	camera_surface = surface_create(_surf_width,_surf_height);
-//surface_set_target(camera_surface);
-//draw_clear_alpha(camera_surface_bg_color,camera_surface_bg_alpha);
+surface_set_target(camera_surface);
+draw_clear_alpha(camera_surface_bg_color,camera_surface_bg_alpha);
 
 
 #region 3D Projection Setup
@@ -25,26 +25,36 @@ camera_apply(_cam);
 #endregion
 
 #region Draw 3D Objects
-gpu_set_ztestenable(true);
-gpu_set_alphatestenable(true);
-gpu_set_alphatestref(10);
-gpu_set_zwriteenable(true);
 
 //draw_light_define_ambient(c_black);
 draw_set_lighting(true);
 draw_light_define_point(0,camera_position[vX],camera_position[vY],camera_position[vZ],1500,c_white);
 draw_light_enable(0,true);
 
+//Draw Skybox
+with(skybox_id)
+{
+  event_perform(ev_draw,0); 
+}
+
+
+gpu_set_ztestenable(true);
+gpu_set_alphatestenable(true);
+gpu_set_alphatestref(10);
+gpu_set_zwriteenable(true);
+
 for(var _i=0; _i< ds_list_size(instance_register); _i++)
 {
   with(instance_register[| _i])
+  {
+    if(id == other.skybox_id) continue;
   	event_perform(ev_draw,0);
-
+  }
 }
 gpu_set_fog(false,0,0,0);
 #endregion
 
-//surface_reset_target();
+surface_reset_target();
 
 #region//Reset back to Ortho
 gpu_set_ztestenable(false);
@@ -61,7 +71,7 @@ camera_apply(_cam);
 #endregion
 
 //Finally, draw the 3D
-//if(camera_draw_surface)
-//  draw_surface_ext(camera_surface,camera_get_view_x(_cam),camera_get_view_y(_cam),_scale,_scale,0,c_white,1);
+if(camera_draw_surface)
+  draw_surface_ext(camera_surface,camera_get_view_x(_cam),camera_get_view_y(_cam),_scale,_scale,0,c_white,1);
 
 timer++;

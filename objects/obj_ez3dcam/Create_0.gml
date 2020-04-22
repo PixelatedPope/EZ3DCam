@@ -45,6 +45,8 @@ vertex_format_add_normal();
 vertex_format_add_colour();
 vertex_format_add_texcoord();
 vertex_format = vertex_format_end();
+
 instance_register = ds_list_create();
+skybox_id = noone; 
 
 timer=0;

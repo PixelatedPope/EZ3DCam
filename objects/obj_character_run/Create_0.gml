@@ -1,3 +1,3 @@
 /// @description
-x=-50
+x=view_w/2;
 spd=3.5;

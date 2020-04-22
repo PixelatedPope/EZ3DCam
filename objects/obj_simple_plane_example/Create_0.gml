@@ -14,6 +14,7 @@ ez3dcam_enable(); //Enables EZ3D at this object's depth.
 instance_create_depth(500,0,0,obj_simple_plane); 
 instance_create_depth(1000,500,0,obj_simple_plane);
 instance_create_depth(1500,-500,0,obj_simple_plane);
+gpu_set_cullmode(cull_counterclockwise);
 
 //Want to render the 3D element to a surface?
 //Uncomment the below line, and the related line in the draw event.

@@ -4,7 +4,8 @@ var _scale = 1;
 draw_set_color(c_white);
 var _str = "";
 _str += "Translate: A S D W";
-_str += "\n Rotate: Arrow Keys";
+_str += "\nRotate: Arrow Keys";
+_str += "\nToggle Resolution: R";
 _str += "\n\nReset: Backspace";
 _str += "\nEnter: Next Demo";
 

@@ -6,6 +6,7 @@ _str += "Pitch & Roll: A S D W";
 _str += "\nYaw: Q E";
 _str += "\n +/- Throttle: Up/Down Arrow Keys ("+string(throttle)+")";
 _str += "\nFOV: Mouse Wheel";
+_str += "\nToggle Resolution: R";
 _str += "\n\nReset: Backspace";
 _str += "\nEnter: Next Demo";
 

@@ -1,5 +1,6 @@
 /// @description Insert description here
 event_inherited();
+ez3dcam_register_skybox(id)
 var _size = ez3dcam_get_zfar()*.5;
 fog = false;
 rotation[vX]=90;
