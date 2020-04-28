@@ -57,33 +57,33 @@ _uvs = sprite_get_uvs(spr_card_back,0);
 vertex_position_3d(_buff,-_w,0,-_h);
 vertex_normal(_buff,0,-1,0);
 vertex_colour(_buff, c_white, 1);
-vertex_texcoord(_buff, _uvs[_l], _uvs[_t]);
+vertex_texcoord(_buff, _uvs[_r], _uvs[_t]);
 		
 vertex_position_3d(_buff,-_w,0,_h);
 vertex_normal(_buff,0,-1,0);
 vertex_colour(_buff, c_white, 1);
-vertex_texcoord(_buff, _uvs[_l], _uvs[_b]);
+vertex_texcoord(_buff, _uvs[_r], _uvs[_b]);
 
 vertex_position_3d(_buff,_w,0,-_h);
 vertex_normal(_buff,0,-1,0);
 vertex_colour(_buff, c_white, 1);
-vertex_texcoord(_buff, _uvs[_r], _uvs[_t]);
+vertex_texcoord(_buff, _uvs[_l], _uvs[_t]);
 
 //Bottom Right Tri	
 vertex_position_3d(_buff,_w,0,_h);
 vertex_normal(_buff,0,-1,0);
 vertex_colour(_buff, c_white, 1);
-vertex_texcoord(_buff, _uvs[_r], _uvs[_b]);
+vertex_texcoord(_buff, _uvs[_l], _uvs[_b]);
 		
 vertex_position_3d(_buff,_w,0,-_h);
 vertex_normal(_buff,0,-1,0);
 vertex_colour(_buff, c_white, 1);
-vertex_texcoord(_buff, _uvs[_r], _uvs[_t]);
+vertex_texcoord(_buff, _uvs[_l], _uvs[_t]);
 
 vertex_position_3d(_buff,-_w,0,_h);
 vertex_normal(_buff,0,-1,0);
 vertex_colour(_buff, c_white, 1);
-vertex_texcoord(_buff, _uvs[_l], _uvs[_b]);
+vertex_texcoord(_buff, _uvs[_r], _uvs[_b]);
 #endregion
 vertex_end(_buff);
 vertex = _buff;
