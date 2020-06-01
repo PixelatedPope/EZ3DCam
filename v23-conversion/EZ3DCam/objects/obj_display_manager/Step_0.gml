@@ -1,5 +1,5 @@
 ///Zoom window
-if(keyboard_check_pressed(ord(1)))
+if(keyboard_check_pressed(ord("1")))
 {
   window_scale = window_scale+1 > window_scale_max ? 1 : window_scale+1;
   
@@ -7,7 +7,7 @@ if(keyboard_check_pressed(ord(1)))
   surface_resize(application_surface,base_width*window_scale,base_height*window_scale);
   center_window;
 }
-if(keyboard_check_pressed(ord(2)))
+if(keyboard_check_pressed(ord("2")))
 {
   window_set_fullscreen(!window_get_fullscreen());
 }
