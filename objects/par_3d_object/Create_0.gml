@@ -7,7 +7,7 @@ rotation = vZERO;
 vertex = noone;
 primitive_type = pr_trianglelist;
 texture = sprite_get_texture(sprite_index,0);
-ez3dcam_register_instance(id);
+EZ3D.register_instance(id);
 fog = true;
 fog_start = 0;
 fog_end = 5000;

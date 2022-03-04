@@ -1,4 +1,5 @@
-//Camera and View
+function MACROS() {
+	//Camera and View
 #macro cam view_camera[0]
 #macro base_width 800
 #macro base_height 400
@@ -18,7 +19,7 @@
 #macro mouse_gui_y device_mouse_y_to_gui(0)
 #macro center_window alarm[0]=1
 
-//Directions
+	//Directions
 #macro no_direction -1
 #macro north 90
 #macro east 0
@@ -28,3 +29,7 @@
 #macro north_west 135
 #macro south_west 225
 #macro south_east 315
+
+
+
+}

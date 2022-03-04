@@ -4,12 +4,11 @@ var _vw = camera_get_view_width(_cam);
 var _vh = camera_get_view_height(_cam);
 var _ortho_view_mat = camera_get_view_mat(_cam);
 var _ortho_proj_mat = camera_get_proj_mat(_cam);
-var _surf_width = ez3dcam_get_width();
-var _surf_height = ez3dcam_get_height();
+var _surf_width = get_width();
+var _surf_height = get_height();
 var _scale = _vw/_surf_width;
 
-event_user(0); //Build View and Matrix Projections
-
+rebuildCameraMatrix();
 draw_set_color(c_white);
 
 if(!surface_exists(camera_surface))

@@ -1,2 +1,2 @@
 /// @description
-position = ez3dcam_get_position();
+position = EZ3D.get_position();

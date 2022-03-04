@@ -18,5 +18,5 @@ gpu_set_cullmode(cull_counterclockwise);
 
 //Want to render the 3D element to a surface?
 //Uncomment the below line, and the related line in the draw event.
-//ez3dcam_set_render_target(EZ3DCam.render_target_surface,200,200,c_black,.5);
+//EZ3D._render_target(EZ3DCam.render_target_surface,200,200,c_black,.5);
 //Play with the size and color/alpha options!

@@ -16,11 +16,11 @@ enum EZ3DCam
 #macro vU 2
 #macro vV 3
 
-//Common Vector Shortcuts
+	//Common Vector Shortcuts
 #macro vZERO [0,0,0]
 #macro vONE [1,1,1]
 
-//Matrices
+	//Matrices
 #macro mX 12
 #macro mY 13
 #macro mZ 14

@@ -12,7 +12,7 @@ layer_x("Sky", view_x+lerp(0,sprite_get_width(spr_bg_sky),view_x/(room_width-vie
 position[vX]+=keyboard_check(ord("W"))-keyboard_check(ord("S"))
 position[vY]-=keyboard_check(ord("A"))-keyboard_check(ord("D"))
 
-var _pos = ez3dcam_get_position();
+var _pos = EZ3D.get_position();
 //Lighting
 draw_light_define_point(1,_pos[vX],_pos[vY],_pos[vZ],50,c_white)
 draw_light_enable(1,true);

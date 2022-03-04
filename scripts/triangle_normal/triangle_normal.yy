@@ -1,8 +1,12 @@
 {
-    "id": "6b041684-6cb8-49a2-bf1b-19c7d60c4ac5",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "triangle_normal",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "3D Helpers",
+    "path": "folders/Scripts/3D Helpers.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "triangle_normal",
+  "tags": [],
+  "resourceType": "GMScript",
 }

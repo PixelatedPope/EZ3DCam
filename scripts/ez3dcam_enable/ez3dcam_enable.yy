@@ -1,8 +1,12 @@
 {
-    "id": "e9b8a9b9-70b6-4bbe-86f1-ae6e80a66ffb",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "ez3dcam_enable",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "EZ3DCam - REQUIRED",
+    "path": "folders/Scripts/EZ3DCam - REQUIRED.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "ez3dcam_enable",
+  "tags": [],
+  "resourceType": "GMScript",
 }

@@ -1,8 +1,12 @@
 {
-    "id": "f975dabd-8042-46f1-9d8a-bc2aaeabb8f5",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "ez3dcam_macros_enums",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "EZ3DCam - REQUIRED",
+    "path": "folders/Scripts/EZ3DCam - REQUIRED.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "ez3dcam_macros_enums",
+  "tags": [],
+  "resourceType": "GMScript",
 }

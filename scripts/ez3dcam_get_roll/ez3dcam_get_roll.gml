@@ -1,1 +1,0 @@
-return EZ3D.camera_roll;

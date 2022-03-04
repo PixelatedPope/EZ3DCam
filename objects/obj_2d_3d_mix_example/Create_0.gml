@@ -16,5 +16,5 @@ instance_create_depth(700,0,0,obj_tower);
 //Want to change how the 3D is rendered?
 //Uncomment the below line.
 //Set the last argument to false and uncomment the line in the draw event.
-//ez3dcam_set_render_target(200,100,c_black,0,true);
+//EZ3D.set_render_target(200,100,c_black,0,true);
 //Play with the size and color/alpha options!

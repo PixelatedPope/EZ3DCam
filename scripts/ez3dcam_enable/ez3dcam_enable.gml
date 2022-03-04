@@ -1,1 +1,5 @@
-if(!instance_exists(EZ3D)) instance_create_depth(0,0,depth,EZ3D)
+function ez3dcam_enable() {
+	if(!instance_exists(EZ3D)) instance_create_depth(0,0,depth,EZ3D)
+
+
+}

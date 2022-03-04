@@ -1,8 +1,12 @@
 {
-    "id": "76baf77b-ab69-44f0-94ad-424d50c0d063",
-    "modelName": "GMScript",
-    "mvc": "1.0",
-    "name": "vertex_buffer_create_cylinder",
-    "IsCompatibility": false,
-    "IsDnD": false
+  "isDnD": false,
+  "isCompatibility": false,
+  "parent": {
+    "name": "3D Helpers",
+    "path": "folders/Scripts/3D Helpers.yy",
+  },
+  "resourceVersion": "1.0",
+  "name": "vertex_buffer_create_cylinder",
+  "tags": [],
+  "resourceType": "GMScript",
 }

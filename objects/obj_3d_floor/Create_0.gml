@@ -12,7 +12,7 @@ var _tile_count = 250;
 
 light_enabled = false;
 fog = true;
-fog_end = ez3dcam_get_zfar();
+fog_end = EZ3D.get_zfar();
 fog_start = 500;
 fog_color = $a5866a;
 
