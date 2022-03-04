@@ -3,7 +3,7 @@ var _scale = 1;
 draw_set_color(c_white);
 var _str = "";
 //_str += "Face Dir: "+string(character.face_dir);
-//var _cam = EZ3D.get_direction();
+//var _cam = EZ3D.getDirection();
 //_str += "\nCam Dir: "+string(point_direction(0,0,_cam[vX],_cam[vY]));
 _str += "Move: Arrows";
 _str += "\nCamera: A S D W";

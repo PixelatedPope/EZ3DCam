@@ -6,21 +6,21 @@ _scale *=2;
 draw_set_color(c_white);
 var _str = "";
 
-switch(camera_mode)
+switch(cameraMode)
 {
 	case EZ3DCam.mode_first_person: _str+="First Person Camera"; break;
 	case EZ3DCam.mode_track_target: _str+="Track Target Camera"; break;
 	case EZ3DCam.mode_third_person: _str+="Third Person Camera"; break;
 }
 _str += "\n";
-for(var _i=0; _i<array_length_1d(camera_direction); _i++)
+for(var _i=0; _i<array_length_1d(cameraDirection); _i++)
 {
-	_str+="camera_direction["+string(_i)+"] = "+string(camera_direction[_i])+"\n";	
+	_str+="cameraDirection["+string(_i)+"] = "+string(cameraDirection[_i])+"\n";	
 }
 
- _str+="X: "+string(camera_position[vX])+"\n"+
- 			"Y: "+string(camera_position[vY])+"\n"+
- 			"Z: "+string(camera_position[vZ])+"\n";
+ _str+="X: "+string(cameraPosition[vX])+"\n"+
+ 			"Y: "+string(cameraPosition[vY])+"\n"+
+ 			"Z: "+string(cameraPosition[vZ])+"\n";
 
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);

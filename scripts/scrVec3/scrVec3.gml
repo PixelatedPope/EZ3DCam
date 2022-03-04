@@ -1,16 +1,11 @@
-///@param xyz1
-///@param xyz2
-function point_distance_vec3(argument0, argument1) {
-	var _a = argument0;
-	var _b = argument1;
+
+///@func point_distance_vec3(A[x,y,z], B[x,y,z])
+function point_distance_vec3(_a, _b) {
 	return point_distance_3d(_a[vX],_a[vY],_a[vZ],_b[vX],_b[vY],_b[vZ]);
-
-
 }
-/// returns a new vector with the given vectors added together
-/// @param vector1
-/// @param vector2
-/// @param <vector3...>
+
+///@func vec3_add(vec3, vec3, vec3...)
+///returns a new vector with the given vectors added together
 function vec3_add() {
 	var _new = [0,0,0];
 	for(var _i= 0; _i<argument_count; _i++)
@@ -20,15 +15,12 @@ function vec3_add() {
 		_new[1]+=_vec[1];
 		_new[2]+=_vec[2];
 	}
-	return _new
-
-
+	return _new;
 }
-/// @description returns the length of the given 3D vector
-/// @param vector
-function vec3_length(argument0) {
-	var _v1 = argument0;
 
+///@func vec3_length([x,y,z])
+///@description returns the length of the given 3D vector
+function vec3_length(_v1) {
 	var _tot = 0;
 	_tot+=_v1[0]*_v1[0];
 	_tot+=_v1[1]*_v1[1];
@@ -37,13 +29,11 @@ function vec3_length(argument0) {
 		_tot = sqrt(_tot);
 	
 	return _tot;
-
-
 }
-/// @description Returns a 3D vector with a length of 1
-/// @param vec3
-function vec3_normalize(argument0) {
-	var _v1 = argument0;
+
+///@func vec3_normalize([x,y,z])
+///@description Returns a 3D vector with a length of 1
+function vec3_normalize(_v1) {
 	var _v;
 
 	var _tot = 0;
@@ -61,20 +51,13 @@ function vec3_normalize(argument0) {
 	}
 
 	return _v;
-
-
-
 }
+
+///@fucn vec3_scale([x,y,z], scaler)
 /// scales the given vec3 array by the given value
-/// @param vec3
-/// @param scalar
-function vec3_scale(argument0, argument1) {
-	var _vec = argument0;
-	var _scale = argument1;
+function vec3_scale(_vec, _scale) {
 	_vec[0]*=_scale;
 	_vec[1]*=_scale;
 	_vec[2]*=_scale;
 	return _vec;
-
-
 }

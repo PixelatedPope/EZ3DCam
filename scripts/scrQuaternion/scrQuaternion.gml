@@ -43,8 +43,8 @@ function quaternion_matrix(argument0) {
 	var _hyp_sqr = _length*_length + _r*_r;
 
 	//Calculate trig coefficients
-	var _c   = 2*_r*_r / _hyp_sqr - 1;
-	var _s   = 2*_length*_r*_hyp_sqr;
+	var _c  = 2*_r*_r / _hyp_sqr - 1;
+	var _s  = 2*_length*_r*_hyp_sqr;
 	var _omc = 1 - _c;
 
 	//Normalise the input vector
@@ -53,10 +53,10 @@ function quaternion_matrix(argument0) {
 	_z /= _length;
 
 	//Build matrix
-	return [_omc*_x*_x + _c   , _omc*_x*_y + _s*_z,  _omc*_x*_z - _s*_y, 0,
-	        _omc*_x*_y - _s*_z, _omc*_y*_y + _c   ,  _omc*_y*_z + _s*_x, 0,
-	        _omc*_x*_z + _s*_y, _omc*_y*_z - _s*_x,  _omc*_z*_z + _c   , 0,
-	                         0,                  0,                   0, 1];
+	return [_omc*_x*_x + _c  , _omc*_x*_y + _s*_z, _omc*_x*_z - _s*_y, 0,
+	    _omc*_x*_y - _s*_z, _omc*_y*_y + _c  , _omc*_y*_z + _s*_x, 0,
+	    _omc*_x*_z + _s*_y, _omc*_y*_z - _s*_x, _omc*_z*_z + _c  , 0,
+	             0,         0,          0, 1];
 
 
 }
@@ -76,9 +76,9 @@ function quaternion_multiply(argument0, argument1) {
 	var _x2 = _q2[0], _y2 = _q2[1], _z2 = _q2[2], _w2 = _q2[3];
 
 	return [_x1*_x2 - _y1*_y2 - _z1*_z2 - _w1*_w2,
-	        _x1*_y2 + _y1*_x2 + _z1*_w2 - _w1*_z2,
-	        _x1*_z2 + _z1*_x2 + _w1*_y2 - _y1*_w2,
-	        _x1*_w2 + _w1*_x2 + _y1*_z2 - _z1*_y2];
+	    _x1*_y2 + _y1*_x2 + _z1*_w2 - _w1*_z2,
+	    _x1*_z2 + _z1*_x2 + _w1*_y2 - _y1*_w2,
+	    _x1*_w2 + _w1*_x2 + _y1*_z2 - _z1*_y2];
 
 
 
@@ -93,7 +93,7 @@ function quaternion_multiply(argument0, argument1) {
 function quaternion_rotate_localx(argument0, argument1) {
 
 	return quaternion_multiply([argument0[0], argument0[1], argument0[2], argument0[3]],
-	                           [dcos(argument1/2), dsin(argument1/2), 0, 0]);
+	              [dcos(argument1/2), dsin(argument1/2), 0, 0]);
 
 
 
@@ -108,7 +108,7 @@ function quaternion_rotate_localx(argument0, argument1) {
 function quaternion_rotate_localy(argument0, argument1) {
 
 	return quaternion_multiply([argument0[0], argument0[1], argument0[2], argument0[3]],
-	                           [dcos(argument1/2), 0, 0, dsin(argument1/2)]);
+	              [dcos(argument1/2), 0, 0, dsin(argument1/2)]);
 
 
 }
@@ -122,7 +122,7 @@ function quaternion_rotate_localy(argument0, argument1) {
 function quaternion_rotate_localz(argument0, argument1) {
 
 	return quaternion_multiply([argument0[0], argument0[1], argument0[2], argument0[3]],
-	                           [dcos(argument1/2), 0, dsin(argument1/2), 0]);
+	              [dcos(argument1/2), 0, dsin(argument1/2), 0]);
 
 
 }
@@ -135,14 +135,14 @@ function quaternion_rotate_localz(argument0, argument1) {
 /// @jujuadams
 function quaternion_rotate_vector(argument0, argument1) {
 
-	var _vector     = argument0;
+	var _vector   = argument0;
 	var _quaternion = argument1;
 
 	_vector = quaternion_multiply([_quaternion[0], _quaternion[1], _quaternion[2], _quaternion[3]],
-	                                           [0,     _vector[0],     _vector[1],     _vector[2]]);
+	                      [0,   _vector[0],   _vector[1],   _vector[2]]);
 
 	_vector = quaternion_multiply([_quaternion[0], _quaternion[1], _quaternion[2], _quaternion[3]],
-	                                           [0,    -_vector[1],    -_vector[2],    -_vector[3]]);
+	                      [0,  -_vector[1],  -_vector[2],  -_vector[3]]);
 
 	return [_vector[1], _vector[2], _vector[3]];
 
@@ -158,7 +158,7 @@ function quaternion_rotate_vector(argument0, argument1) {
 function quaternion_rotate_worldx(argument0, argument1) {
 
 	return quaternion_multiply([dcos(argument1/2), dsin(argument1/2), 0, 0],
-	                           [argument0[0], argument0[1], argument0[2], argument0[3]]);
+	              [argument0[0], argument0[1], argument0[2], argument0[3]]);
 
 
 
@@ -173,7 +173,7 @@ function quaternion_rotate_worldx(argument0, argument1) {
 function quaternion_rotate_worldy(argument0, argument1) {
 
 	return quaternion_multiply([dcos(argument1/2), 0, dsin(argument1/2), 0],
-	                           [argument0[0], argument0[1], argument0[2], argument0[3]]);
+	              [argument0[0], argument0[1], argument0[2], argument0[3]]);
 
 
 
@@ -188,7 +188,7 @@ function quaternion_rotate_worldy(argument0, argument1) {
 function quaternion_rotate_worldz(argument0, argument1) {
 
 	return quaternion_multiply([dcos(argument1/2), 0, 0, dsin(argument1/2)],
-	                           [argument0[0], argument0[1], argument0[2], argument0[3]]);
+	              [argument0[0], argument0[1], argument0[2], argument0[3]]);
 
 
 }

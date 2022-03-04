@@ -6,18 +6,18 @@ scale = [.25,.25,.25];
 light_enabled=true;
 fog_color = c_black;
 //The most difficult part of working with 3D is building your
-//3D "models".  This is an example of a simple textured plane
-//made up of two triangles.  
+//3D "models". This is an example of a simple textured plane
+//made up of two triangles. 
 
 var _w = sprite_get_width(sprite_index)/2,
-    _h = sprite_get_height(sprite_index)/2,
-    _uvs = sprite_get_uvs(choose(spr_ace,spr_king,spr_queen,spr_jack),0),
-    _buff = vertex_create_buffer(),
-    _l=0,_t=1,_r=2,_b=3;
+  _h = sprite_get_height(sprite_index)/2,
+  _uvs = sprite_get_uvs(choose(spr_ace,spr_king,spr_queen,spr_jack),0),
+  _buff = vertex_create_buffer(),
+  _l=0,_t=1,_r=2,_b=3;
 
-vertex_begin(_buff,EZ3D.vertex_format);
-#region FRONT    
-    
+vertex_begin(_buff,EZ3D.vertexFormat);
+#region FRONT  
+  
 //Top Left Tri
 vertex_position_3d(_buff,-_w,0,-_h);
 vertex_normal(_buff,0,1,0);

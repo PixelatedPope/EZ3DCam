@@ -15,28 +15,28 @@ for(var _y=0; _y<3; _y++)
 	{
 		
 		var _w = sprite_get_width(spr_char_south+_y)/2,
-		    _h = sprite_get_height(spr_char_south+_y),
+		  _h = sprite_get_height(spr_char_south+_y),
 				_uvs = sprite_get_uvs(spr_char_south+_y,_x),
 				_buff = vertex_create_buffer();
-		vertex_begin(_buff,EZ3D.vertex_format);
+		vertex_begin(_buff,EZ3D.vertexFormat);
 
 		vertex_position_3d(_buff,-_w,0,-_h);
-    vertex_normal(_buff,0,1,0);
+  vertex_normal(_buff,0,1,0);
 		vertex_colour(_buff, c_white, 1);
 		vertex_texcoord(_buff, _uvs[_l], _uvs[_t]);
 		
 		vertex_position_3d(_buff,_w,0,-_h);
-    vertex_normal(_buff,0,1,0);
+  vertex_normal(_buff,0,1,0);
 		vertex_colour(_buff, c_white, 1);
 		vertex_texcoord(_buff, _uvs[_r], _uvs[_t]);
 		
 		vertex_position_3d(_buff,-_w,0,0);
-    vertex_normal(_buff,0,1,0);
+  vertex_normal(_buff,0,1,0);
 		vertex_colour(_buff, c_white, 1);
 		vertex_texcoord(_buff, _uvs[_l], _uvs[_b]);
 		
 		vertex_position_3d(_buff,_w,0,0);
-    vertex_normal(_buff,0,1,0);
+  vertex_normal(_buff,0,1,0);
 		vertex_colour(_buff, c_white, 1);
 		vertex_texcoord(_buff, _uvs[_r], _uvs[_b]);
 		
@@ -51,7 +51,7 @@ _h /= 2;
 _buff = vertex_create_buffer();
 _uvs = sprite_get_uvs(spr_char_shadow,0);
 var _alpha = 1;
-vertex_begin(_buff,EZ3D.vertex_format);
+vertex_begin(_buff,EZ3D.vertexFormat);
 
 vertex_position_3d(_buff,-_w,-_h,0);
 vertex_normal(_buff,0,0,1);

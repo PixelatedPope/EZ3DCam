@@ -6,7 +6,7 @@
     "path": "folders/Scripts/EZ3DCam - REQUIRED.yy",
   },
   "resourceVersion": "1.0",
-  "name": "ez3dcam_macros_enums",
+  "name": "use_ez3d_cam",
   "tags": [],
   "resourceType": "GMScript",
 }

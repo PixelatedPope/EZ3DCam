@@ -25,7 +25,7 @@ function triangle_normal(argument0, argument1, argument2, argument3, argument4, 
 	var cpl = point_distance_3d(0, 0, 0, cx, cy, cz);
 
 	if (cpl != 0) {
-	    return [cx / cpl, cy / cpl, cz / cpl];
+	  return [cx / cpl, cy / cpl, cz / cpl];
 	}
 
 	return [0, 0, 1];

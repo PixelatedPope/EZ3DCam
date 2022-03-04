@@ -10,8 +10,8 @@ function display_write_all_specs(argument0, argument1) {
 	{
 		if(!view_visible[_i]) continue;
 		_str+="\nView["+string(_i)+"]: "+string(camera_get_view_width(view_camera[_i]))+" x "+string(camera_get_view_height(view_camera[_i]))+" ("+string(camera_get_view_width(view_camera[_i])/camera_get_view_height(view_camera[_i]))+")";
-		_str+="\n       x: "+string(camera_get_view_x(view_camera[_i]));
-		_str+="\n       y: "+string(camera_get_view_y(view_camera[_i]));	
+		_str+="\n    x: "+string(camera_get_view_x(view_camera[_i]));
+		_str+="\n    y: "+string(camera_get_view_y(view_camera[_i]));	
 	}
 
 	draw_text(argument0,argument1,_str);

@@ -1,5 +1,5 @@
 /// @description
-EZ3D.unregister_instance(id);
+EZ3D.deregisterInstance(id);
 
 if(vertex != noone)
 	buffer_delete(vertex);

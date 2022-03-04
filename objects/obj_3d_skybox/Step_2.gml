@@ -1,2 +1,2 @@
 /// @description
-position = EZ3D.get_position();
+position = EZ3D.getPosition();

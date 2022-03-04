@@ -4,22 +4,22 @@ var _vw = camera_get_view_width(_cam);
 var _vh = camera_get_view_height(_cam);
 var _ortho_view_mat = camera_get_view_mat(_cam);
 var _ortho_proj_mat = camera_get_proj_mat(_cam);
-var _surf_width = get_width();
-var _surf_height = get_height();
+var _surf_width = getWidth();
+var _surf_height = getHeight();
 var _scale = _vw/_surf_width;
 
 rebuildCameraMatrix();
 draw_set_color(c_white);
 
-if(!surface_exists(camera_surface))
-	camera_surface = surface_create(_surf_width,_surf_height);
-surface_set_target(camera_surface);
-draw_clear_alpha(camera_surface_bg_color,camera_surface_bg_alpha);
+if(!surface_exists(cameraSurface))
+	cameraSurface = surface_create(_surf_width,_surf_height);
+surface_set_target(cameraSurface);
+draw_clear_alpha(cameraSurfaceBgColor,cameraSurfaceBgAlpha);
 
 
 #region 3D Projection Setup
-camera_set_view_mat(_cam, view_matrix);
-camera_set_proj_mat(_cam, proj_matrix);
+camera_set_view_mat(_cam, viewMatrix);
+camera_set_proj_mat(_cam, progMatrix);
 camera_apply(_cam);
 #endregion
 
@@ -27,13 +27,13 @@ camera_apply(_cam);
 
 //draw_light_define_ambient(c_black);
 draw_set_lighting(true);
-draw_light_define_point(0,camera_position[vX],camera_position[vY],camera_position[vZ],1500,c_white);
+draw_light_define_point(0,cameraPosition[vX],cameraPosition[vY],cameraPosition[vZ],1500,c_white);
 draw_light_enable(0,true);
 
 //Draw Skybox
-with(skybox_id)
+with(skyboxId)
 {
-  event_perform(ev_draw,0); 
+ event_perform(ev_draw,0); 
 }
 
 
@@ -42,13 +42,13 @@ gpu_set_alphatestenable(true);
 gpu_set_alphatestref(10);
 gpu_set_zwriteenable(true);
 
-for(var _i=0; _i< ds_list_size(instance_register); _i++)
+for(var _i=0; _i< ds_list_size(instanceRegister); _i++)
 {
-  with(instance_register[| _i])
-  {
-    if(id == other.skybox_id) continue;
-  	event_perform(ev_draw,0);
-  }
+ with(instanceRegister[| _i])
+ {
+  if(id == other.skyboxId) continue;
+ 	event_perform(ev_draw,0);
+ }
 }
 gpu_set_fog(false,0,0,0);
 #endregion
@@ -61,16 +61,16 @@ gpu_set_zwriteenable(false);
 gpu_set_alphatestenable(false);
 matrix_set(matrix_world,matrix_build_identity()); 
 
-_ortho_proj_mat[5] = abs(_ortho_proj_mat[5]); //Why?  Because GM is kinda dumb.
+_ortho_proj_mat[5] = abs(_ortho_proj_mat[5]); //Why? Because GM is kinda dumb.
 camera_set_view_mat(_cam, _ortho_view_mat);
 camera_set_proj_mat(_cam, _ortho_proj_mat);
-camera_set_view_size(_cam, prev_view_width, prev_view_height);
+camera_set_view_size(_cam, prevViewWidth, prevViewHeight);
 camera_apply(_cam);
 
 #endregion
 
 //Finally, draw the 3D
-if(camera_draw_surface)
-  draw_surface_ext(camera_surface,camera_get_view_x(_cam),camera_get_view_y(_cam),_scale,_scale,0,c_white,1);
+if(cameraShouldDrawSurface)
+ draw_surface_ext(cameraSurface,camera_get_view_x(_cam),camera_get_view_y(_cam),_scale,_scale,0,c_white,1);
 
 timer++;

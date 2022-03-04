@@ -1,4 +1,4 @@
 /// @description
 if(keyboard_check_pressed(ord("R")))
-  EZ3D.set_size(EZ3D.get_width() != view_w ? view_w : window_get_width(),
-                   EZ3D.get_height() != view_h ? view_h : window_get_height());
+ EZ3D.setSize(EZ3D.getWidth() != VIEW_W ? VIEW_W : window_get_width(),
+          EZ3D.getHeight() != VIEW_H ? VIEW_H : window_get_height());

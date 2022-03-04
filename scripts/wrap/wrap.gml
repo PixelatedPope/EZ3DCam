@@ -3,7 +3,7 @@
 /// @param min
 /// @param max
 function wrap(argument0, argument1, argument2) {
-	//returns the value wrapped.  If it is above or below the threshold it will wrap around
+	//returns the value wrapped. If it is above or below the threshold it will wrap around
 
 	var _val = argument0;
 	var _min = min(argument1,argument2);

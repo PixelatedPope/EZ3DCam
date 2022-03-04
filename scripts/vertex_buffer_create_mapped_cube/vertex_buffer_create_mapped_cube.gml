@@ -1,5 +1,5 @@
 /// @description returns a vertex buffer of a cube.
-/// @param vertex_format
+/// @param vertexFormat
 /// @param size
 /// @param origin_xyz
 /// @param color
@@ -11,7 +11,7 @@ function vertex_buffer_create_mapped_cube() {
 			_size = argument[1],
 			_orig = argument[2],
 			_x1 = -_orig[vX],
-	    _y1 = -_orig[vY],
+	  _y1 = -_orig[vY],
 			_z1 = -_orig[vZ],
 			_x2 = _x1+_size,
 			_y2 = _y1+_size,
@@ -20,7 +20,7 @@ function vertex_buffer_create_mapped_cube() {
 			_uvs = argument_count > 4? argument[4] : [0,0,1,1];
 
 	var _u = [lerp(_uvs[0],_uvs[2],.0), 
-					  lerp(_uvs[0],_uvs[2],.25), 
+					 lerp(_uvs[0],_uvs[2],.25), 
 						lerp(_uvs[0],_uvs[2],.5), 
 						lerp(_uvs[0],_uvs[2],.75), 
 						lerp(_uvs[0],_uvs[2],1.0)];
