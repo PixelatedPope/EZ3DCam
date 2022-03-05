@@ -1,22 +1,14 @@
-/// @param x1
-/// @param y1
-/// @param z1
-/// @param x2
-/// @param y2
-/// @param z2
-/// @param x3
-/// @param y3
-/// @param z3
-function triangle_normal(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8) {
+///@func triangle_normal(x1, y1, z1, x2, y2, z2, x3, y3, z3)
+function triangle_normal(_x1, _y1, _z1, _x2, _y2, _z2, _x3, _y3, _z3) {
 
 	gml_pragma("forceinline");
 
-	var v1x = argument3 - argument0;
-	var v1y = argument4 - argument1;
-	var v1z = argument5 - argument2;
-	var v2x = argument6 - argument0;
-	var v2y = argument7 - argument1;
-	var v2z = argument8 - argument2;
+	var v1x = _x2 - _x1;
+	var v1y = _y2 - _y1;
+	var v1z = _z2 - _z1;
+	var v2x = _x3 - _x1;
+	var v2y = _y3 - _y1;
+	var v2z = _z3 - _z1;
 
 	var cx = v1y * v2z - v1z * v2y;
 	var cy = -v1x * v2z + v1z * v2x;
@@ -29,6 +21,4 @@ function triangle_normal(argument0, argument1, argument2, argument3, argument4, 
 	}
 
 	return [0, 0, 1];
-
-
 }

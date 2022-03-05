@@ -23,7 +23,6 @@
     {"id":{"name":"tl_castle","path":"tilesets/tl_castle/tl_castle.yy",},"order":1,},
     {"id":{"name":"MACROS","path":"scripts/MACROS/MACROS.yy",},"order":0,},
     {"id":{"name":"use_ez3d_cam","path":"scripts/use_ez3d_cam/use_ez3d_cam.yy",},"order":0,},
-    {"id":{"name":"scrQuaternion","path":"scripts/scrQuaternion/scrQuaternion.yy",},"order":11,},
     {"id":{"name":"round_n","path":"scripts/round_n/round_n.yy",},"order":0,},
     {"id":{"name":"draw_text_transformed_gpu","path":"scripts/draw_text_transformed_gpu/draw_text_transformed_gpu.yy",},"order":1,},
     {"id":{"name":"wrap","path":"scripts/wrap/wrap.yy",},"order":2,},

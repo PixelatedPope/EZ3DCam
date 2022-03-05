@@ -1,4 +1,4 @@
-function use_ez3d_cam() {
+function use_ez3d_cam(_mode = EZ3DCam.mode_first_person) {
   cam = {
     cleanup: function(){
       if(surface != undefined && surface_exists(surface))
@@ -415,6 +415,9 @@ function use_ez3d_cam() {
   vertex_format_add_colour();
   vertex_format_add_texcoord();
   cam.vertexFormat = vertex_format_end();
+  
+  if(_mode != EZ3DCam.mode_first_person)
+    cam.setMode(_mode);
   
   return cam;  
 }
