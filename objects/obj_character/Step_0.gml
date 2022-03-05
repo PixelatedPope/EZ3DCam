@@ -4,8 +4,8 @@ var _vert = keyboard_check(vk_up)-keyboard_check(vk_down);
 var _spd = 5;
 
 //Camera Relative Movement
-var _forward = EZ3D.getDirection();
-var _right = EZ3D.getDirectionRight();
+var _forward = objEz3dCam.ezCam.getDirection();
+var _right = objEz3dCam.ezCam.getDirectionRight();
 //var _up = [0,0,0];
 
 //Ignore Z

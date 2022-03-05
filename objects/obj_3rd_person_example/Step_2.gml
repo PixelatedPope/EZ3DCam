@@ -1,4 +1,4 @@
 /// @description Follow target
 var _pos = character.position;
 _pos[vZ]=5;
-EZ3D.setTargetPosition(_pos);
+objEz3dCam.ezCam.setTargetPosition(_pos);

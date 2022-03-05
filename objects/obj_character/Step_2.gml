@@ -1,6 +1,6 @@
 /// @description get current frame and angle
 
-var _dir = EZ3D.getDirection();
+var _dir = objEz3dCam.ezCam.getDirection();
 _dir = point_direction(0,0,_dir[vX],_dir[vY]);
 _dir = round_n(angle_difference(face_dir,_dir),90);
 scale = vONE;
@@ -16,5 +16,5 @@ switch(_dir)
 texture = sprite_get_texture(sprite_index,image_index);
 vertex = frames[# floor(image_index),sprite_index-spr_char_south];
 
-var _cam = EZ3D.getPosition();
+var _cam = objEz3dCam.ezCam.getPosition();
 rotation = [0,0,point_direction(x,y,_cam[vX],_cam[vY])-90] // -90 to face the camera.

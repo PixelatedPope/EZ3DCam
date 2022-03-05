@@ -29,7 +29,7 @@ function matrix_build_srt(_scaleXYZ, _rotationXYZ, _translationXYZ) {
 												matrix_build_translation(_translationXYZ));
 }
 
-///@func matrix_comboine(matrix1, matrix2, matrix3...)
+///@func matrix_combine(matrix1, matrix2, matrix3...)
 function matrix_combine() {
 	var _m = matrix_multiply(argument[0],argument[1])
 	for(var _i=2; _i<argument_count; _i++) {

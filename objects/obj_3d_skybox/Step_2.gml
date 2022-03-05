@@ -1,2 +1,2 @@
 /// @description
-position = EZ3D.getPosition();
+position = objEz3dCam.ezCam.getPosition();

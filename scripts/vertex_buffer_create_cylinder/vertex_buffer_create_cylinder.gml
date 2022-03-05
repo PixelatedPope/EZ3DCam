@@ -31,7 +31,7 @@ function vertex_buffer_create_cylinder(argument0, argument1, argument2, argument
 #endregion
 
 	var _buff = vertex_create_buffer();
-	vertex_begin(_buff, EZ3D.vertexFormat);
+	vertex_begin(_buff, objEz3dCam.ezCam.vertexFormat);
 	for (_i = 0; _i <= _sides; _i++)
 	{
 		var _pos = (_i*_hrepeat)/_sides;

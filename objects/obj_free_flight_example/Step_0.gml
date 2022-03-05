@@ -2,7 +2,7 @@
 window_set_caption("FPS: "+string(fps));
 
 //Zoom in and out
-EZ3D.changeFov((mouse_wheel_down()-mouse_wheel_up())*3);
+objEz3dCam.ezCam.changeFov((mouse_wheel_down()-mouse_wheel_up())*3);
 
 var _yaw = keyboard_check(ord("E"))-keyboard_check(ord("Q"));
 var _pitch = keyboard_check(ord("S"))-keyboard_check(ord("W"));
@@ -12,12 +12,12 @@ throttle += (keyboard_check(vk_up)-keyboard_check(vk_down))*.05;
 throttle = clamp(throttle,0,5);
 
 //Camera Relative Movement
-var _forward = vec3_scale(EZ3D.getDirection(),throttle);
+var _forward = vec3_scale(objEz3dCam.ezCam.getDirection(),throttle);
 
-EZ3D.changePosition(_forward);
-EZ3D.changeOrientation([_yaw,_pitch,_roll]);
+objEz3dCam.ezCam.changePosition(_forward);
+objEz3dCam.ezCam.changeOrientation([_yaw,_pitch,_roll]);
 
 if(keyboard_check_pressed(ord("R")))
- EZ3D.setSize(EZ3D.getWidth() != VIEW_W ? VIEW_W : window_get_width(),
-          EZ3D.getHeight() != VIEW_H ? VIEW_H : window_get_height());
+ objEz3dCam.ezCam.setSize(objEz3dCam.ezCam.getWidth() != VIEW_W ? VIEW_W : window_get_width(),
+          objEz3dCam.ezCam.getHeight() != VIEW_H ? VIEW_H : window_get_height());
 	

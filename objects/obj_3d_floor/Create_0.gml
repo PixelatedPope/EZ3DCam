@@ -12,11 +12,11 @@ var _tile_count = 250;
 
 light_enabled = false;
 fog = true;
-fog_end = EZ3D.getZFar();
+fog_end = objEz3dCam.ezCam.getZFar();
 fog_start = 500;
 fog_color = $a5866a;
 
-vertex_begin(_buff,EZ3D.vertexFormat);
+vertex_begin(_buff,objEz3dCam.ezCam.vertexFormat);
 for(var _x = 0; _x+_w < _w*_tile_count; _x+=_w)
 {
 	for(var _y = 0; _y+_h < _h*_tile_count; _y+=_h)

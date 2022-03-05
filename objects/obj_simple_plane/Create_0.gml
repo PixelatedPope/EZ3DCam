@@ -15,7 +15,7 @@ var _w = sprite_get_width(sprite_index)/2,
   _buff = vertex_create_buffer(),
   _l=0,_t=1,_r=2,_b=3;
 
-vertex_begin(_buff,EZ3D.vertexFormat);
+vertex_begin(_buff,objEz3dCam.ezCam.vertexFormat);
 #region FRONT  
   
 //Top Left Tri
