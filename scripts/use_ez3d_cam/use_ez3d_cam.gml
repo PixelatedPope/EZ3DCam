@@ -2,9 +2,7 @@ function use_ez3d_cam() {
   cam = {
     cleanup: function(){
       if(surface != undefined && surface_exists(surface))
-      	surface_free(surface);
- 
-      ds_list_destroy(instanceRegistry);
+      	surface_free(surface);     
     },
     
     draw: function(){
@@ -40,8 +38,7 @@ function use_ez3d_cam() {
       draw_light_enable(0,true);
 
       //Draw Skybox
-      with(skyboxId)
-      {
+      with(skyboxId) {
        event_perform(ev_draw,0); 
       }
 
@@ -51,10 +48,8 @@ function use_ez3d_cam() {
       gpu_set_alphatestref(10);
       gpu_set_zwriteenable(true);
 
-      for(var _i=0; _i< ds_list_size(instanceRegistry); _i++)
-      {
-       with(instanceRegistry[| _i])
-       {
+      for(var _i=0; _i< array_length(instanceRegistry); _i++) {
+       with(instanceRegistry[ _i]) {
         if(id == other.skyboxId) continue;
        	event_perform(ev_draw,0);
        }
@@ -113,7 +108,7 @@ function use_ez3d_cam() {
     zFar: 10000,
     fov: 45,
     
-    instanceRegistry: ds_list_create(),
+    instanceRegistry: [],
     skyboxId: noone,
     changeDistanceFromTarget: function(_dif) {
       if (mode != EZ3DCam.mode_third_person || distance == distance + _dif) exit;
@@ -222,7 +217,7 @@ function use_ez3d_cam() {
     
     registerInstance: function(_id) {
       _id.visible = false;
-      ds_list_add(instanceRegistry, _id);
+      array_push(instanceRegistry, _id);
     },
     
     registerSkybox: function(_id) {
@@ -308,10 +303,12 @@ function use_ez3d_cam() {
     },
     
     deregisterInstance: function(_id) {
-      if (!ds_exists(ds_type_list, instanceRegistry)) exit;
-      var _index = ds_list_find_index(instanceRegistry, _id);
-      if (_index != -1)
-        ds_list_delete(instanceRegistry, _index);
+      for(var _i = 0; _i < array_length(instanceRegistry) _i++) {
+        if(instanceRegistry[_i] == _id) {
+          array_delete(instanceRegistry,_i,1);
+          break;
+        }
+      }
     },
     
     rebuildCameraMatrix: function() {
