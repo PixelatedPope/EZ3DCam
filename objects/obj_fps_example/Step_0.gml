@@ -16,16 +16,16 @@ var _vert = keyboard_check(vk_up)-keyboard_check(vk_down);
 
 //Jumping
 var _pos = objEz3dCam.ezCam.getPosition();
-if(_pos[vZ] == z_floor && keyboard_check_pressed(vk_space))
+if(_pos[V_Z] == z_floor && keyboard_check_pressed(vk_space))
 {
  z_speed = -5; 
 }
 else
 {
  z_speed += .1;
- if(_pos[vZ] >= z_floor)
+ if(_pos[V_Z] >= z_floor)
  {
-  objEz3dCam.ezCam.set_position([_pos[vX],_pos[vY],z_floor]);
+  objEz3dCam.ezCam.set_position([_pos[V_X],_pos[V_Y],z_floor]);
   z_speed = 0;
  }
 }
@@ -38,8 +38,8 @@ var _right = objEz3dCam.ezCam.getDirectionRight();
 var _up = [0,0,z_speed];
 
 //World Relative Movement
-_forward[vZ]=0;
-_right[vZ]=0;
+_forward[V_Z]=0;
+_right[V_Z]=0;
 _forward = vec3_scale(_forward,_spd * _vert);
 _right = vec3_scale(_right,_spd * _hori);
 

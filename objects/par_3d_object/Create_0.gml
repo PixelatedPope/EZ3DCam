@@ -2,8 +2,8 @@
 // You can write your code in this editor
 z=0;
 position = [x,y,z];
-scale = vONE;
-rotation = vZERO;
+scale = V_ONE;
+rotation = V_ZERO;
 vertex = noone;
 primitive_type = pr_trianglelist;
 texture = sprite_get_texture(sprite_index,0);

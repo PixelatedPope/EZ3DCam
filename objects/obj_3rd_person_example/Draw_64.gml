@@ -4,7 +4,7 @@ draw_set_color(c_white);
 var _str = "";
 //_str += "Face Dir: "+string(character.face_dir);
 //var _cam = objEz3dCam.ezCam.getDirection();
-//_str += "\nCam Dir: "+string(point_direction(0,0,_cam[vX],_cam[vY]));
+//_str += "\nCam Dir: "+string(point_direction(0,0,_cam[V_X],_cam[V_Y]));
 _str += "Move: Arrows";
 _str += "\nCamera: A S D W";
 _str += "\nToggle Resolution: R";

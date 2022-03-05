@@ -4,5 +4,5 @@
 /// @description
 var _dir = objEz3dCam.ezCam.getDirection();
 //Lighting
-draw_light_define_direction(1,_dir[vX],_dir[vY],_dir[vZ],c_white)
+draw_light_define_direction(1,_dir[V_X],_dir[V_Y],_dir[V_Z],c_white)
 draw_light_enable(1,true);
