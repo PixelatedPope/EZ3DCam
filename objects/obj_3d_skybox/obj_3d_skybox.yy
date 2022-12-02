@@ -35,6 +35,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Shared",
-    "path": "folders/Objects/Shared.yy",
+    "path": "folders/Demos/Shared.yy",
   },
 }

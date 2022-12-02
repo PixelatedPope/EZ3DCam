@@ -35,6 +35,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Simple Plane",
-    "path": "folders/Objects/Simple Plane.yy",
+    "path": "folders/Demos/Simple Plane.yy",
   },
 }

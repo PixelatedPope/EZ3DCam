@@ -1,5 +1,5 @@
 //FOG AND LIGHTING (should be defaulted to true but bug prevents this in HTML5)
-#macro FOG_DEFAULT_ON os_browser == browser_not_a_browser
+#macro FOG_DEFAULT_ON   os_browser == browser_not_a_browser
 #macro LIGHT_DEFAULT_ON os_browser == browser_not_a_browser
 
 

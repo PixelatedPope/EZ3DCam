@@ -78,7 +78,7 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "2D 3D Mix",
+    "path": "folders/Demos/2D 3D Mix.yy",
   },
 }

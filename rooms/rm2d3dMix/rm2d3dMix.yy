@@ -60,7 +60,7 @@
     "PhysicsWorldPixToMetres": 0.1,
   },
   "parent": {
-    "name": "Rooms",
-    "path": "folders/Rooms.yy",
+    "name": "2D 3D Mix",
+    "path": "folders/Demos/2D 3D Mix.yy",
   },
 }

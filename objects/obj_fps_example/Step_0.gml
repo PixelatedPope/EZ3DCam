@@ -22,7 +22,7 @@ else
  z_speed += .1;
  if(_pos[V_Z] >= z_floor)
  {
-  objEz3dCam.ezCam.set_position([_pos[V_X],_pos[V_Y],z_floor]);
+  objEz3dCam.ezCam.setPosition([_pos[V_X],_pos[V_Y],z_floor]);
   z_speed = 0;
  }
 }

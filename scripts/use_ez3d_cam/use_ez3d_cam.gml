@@ -1,43 +1,42 @@
 function use_ez3d_cam(_mode = EZ3DCam.mode_first_person) {
-  cam = {
+  var _cam = {    
     cleanup: function(){
-      if(surface != undefined && surface_exists(surface))
-      	surface_free(surface);     
+      if(__iSurface != undefined && surface_exists(__iSurface))
+      	surface_free(__iSurface);     
     },
     
     draw: function(){
       var _cam = view_camera[0];
       var _vw = camera_get_view_width(_cam);
-      var _vh = camera_get_view_height(_cam);
       var _ortho_view_mat = camera_get_view_mat(_cam);
       var _ortho_proj_mat = camera_get_proj_mat(_cam);
       var _surf_width = getWidth();
       var _surf_height = getHeight();
       var _scale = _vw/_surf_width;
 
-      rebuildCameraMatrix();
+      __iRebuildCameraMatrix();
       draw_set_color(c_white);
 
-      if(!surface_exists(surface))
-      	surface = surface_create(_surf_width,_surf_height);
-      surface_set_target(surface);
-      draw_clear_alpha(surfaceBgColor,surfaceBgAlpha);
+      if(!surface_exists(__iSurface))
+      	__iSurface = surface_create(_surf_width,_surf_height);
+      surface_set_target(__iSurface);
+      draw_clear_alpha(__iSurfaceBgColor,__iSurfaceBgAlpha);
 
 
       #region 3D Projection Setup
-      camera_set_view_mat(_cam, viewMatrix);
-      camera_set_proj_mat(_cam, progMatrix);
+      camera_set_view_mat(_cam, __iViewMatrix);
+      camera_set_proj_mat(_cam, __iProgMatrix);
       camera_apply(_cam);
       #endregion
 
       #region Draw 3D Objects
 
       draw_set_lighting(false);
-      draw_light_define_point(0,position[V_X],position[V_Y],position[V_Z],1500,c_white);
+      draw_light_define_point(0,__iPosition[V_X],__iPosition[V_Y],__iPosition[V_Z],1500,c_white);
       draw_light_enable(0,true);
 
       //Draw Skybox
-      with(skyboxId) {
+      with(__iSkyboxId) {
        event_perform(ev_draw,0); 
       }
 
@@ -47,9 +46,9 @@ function use_ez3d_cam(_mode = EZ3DCam.mode_first_person) {
       gpu_set_alphatestref(10);
       gpu_set_zwriteenable(true);
 
-      for(var _i=0; _i< array_length(instanceRegistry); _i++) {
-       with(instanceRegistry[ _i]) {
-        if(id == other.skyboxId) continue;
+      for(var _i=0; _i< array_length(__iInstanceRegistry); _i++) {
+       with(__iInstanceRegistry[ _i]) {
+        if(id == other.__iSkyboxId) continue;
        	event_perform(ev_draw,0);
        }
       }
@@ -67,96 +66,97 @@ function use_ez3d_cam(_mode = EZ3DCam.mode_first_person) {
       //_ortho_proj_mat[5] = abs(_ortho_proj_mat[5]); //Why? Because GM is kinda dumb.
       camera_set_view_mat(_cam, _ortho_view_mat);
       camera_set_proj_mat(_cam, _ortho_proj_mat);
-      camera_set_view_size(_cam, prevViewWidth, prevViewHeight);
+      camera_set_view_size(_cam, __iPrevViewWidth, __iPrevViewHeight);
       camera_apply(_cam);
 
       #endregion
 
       //Finally, draw the 3D
-      if(shouldDrawSurface)
-       draw_surface_ext(surface,camera_get_view_x(_cam),camera_get_view_y(_cam),_scale,_scale,0,c_white,1);
-
-      timer++;
+      if(__iShouldDrawSurface)
+       draw_surface_ext(__iSurface,camera_get_view_x(_cam),camera_get_view_y(_cam),_scale,_scale,0,c_white,1);
     },
     
-    prevViewWidth: 0,
-    prevViewHeight: 0,
-    mode: EZ3DCam.mode_first_person,
-    width: undefined,
-    height: undefined,
-    surface: noone,
-    shouldDrawSurface: true,
-    surfaceBgColor: c_black,
-    surfaceBgAlpha: 0,
-    target: V_ZERO,
-    position: V_ZERO,
-    direction: V_ZERO,
-    directionRight: V_ZERO,
-    directionUp: V_ZERO,
-    up: matrix_build_translation([0, 0, 1]),
-    distance: 1,
-    angleMatrix: matrix_build_identity(),
-    angleQuat: quaternion_create(),
-    roll: 0,
-    yaw: 0,
-    pitch: 0,
-    rotationMode: EZ3DCam.rotation_local,
-    hasMoved: true,
-    progMatrix: [],
-    viewMatrix: [],
-    zFar: 10000,
-    fov: 45,
+    vertexFormat: undefined, //Public
     
-    instanceRegistry: [],
-    skyboxId: noone,
+    __iPrevViewWidth: 0,
+    __iPrevViewHeight: 0,
+    __iMode: EZ3DCam.mode_first_person,
+    __iWidth: undefined,
+    __iHeight: undefined,
+    __iSurface: noone,
+    __iShouldDrawSurface: true,
+    __iSurfaceBgColor: c_black,
+    __iSurfaceBgAlpha: 0,
+    __iTarget: V_ZERO,
+    __iPosition: V_ZERO,
+    __iDirection: V_ZERO,
+    __iDirectionRight: V_ZERO,
+    __iDirectionUp: V_ZERO,
+    __iUp: matrix_build_translation([0, 0, 1]),
+    __iDistance: 1,
+    __iAngleMatrix: matrix_build_identity(),
+    __IAngleQuat: quaternion_create(),
+    __iRoll: 0,
+    __iYaw: 0,
+    __iPitch: 0,
+    __iRotationMode: EZ3DCam.rotation_local,
+    __iHasMoved: true,
+    __iProgMatrix: [],
+    __iViewMatrix: [],
+    __iZFar: 10000,
+    __iFov: 45,
+        
+    __iInstanceRegistry: [],
+    __iSkyboxId: noone,
+    
     changeDistanceFromTarget: function(_dif) {
-      if (mode != EZ3DCam.mode_third_person || distance == distance + _dif) exit;
-      distance += _dif;
-      hasMoved = true;
+      if (__iMode != EZ3DCam.mode_third_person || __iDistance == __iDistance + _dif) exit;
+      __iDistance += _dif;
+      __iHasMoved = true;
     },
     
     changeFov: function(_dif) {
-      if (fov == fov + _dif) exit;
-      fov = clamp(fov + _dif, 1, 179);
-      hasMoved = true;
+      if (__iFov == __iFov + _dif) exit;
+      __iFov = clamp(__iFov + _dif, 1, 179);
+      __iHasMoved = true;
     },
     
     changeOrientation: function(_difArray) {
-      setOrientation([yaw + _difArray[0],
-        pitch + _difArray[1],
-        roll + _difArray[2]
+      setOrientation([__iYaw + _difArray[0],
+        __iPitch + _difArray[1],
+        __iRoll + _difArray[2]
       ]);
     },
     
     changePosition: function(_difArray) {
-      set_position([position[V_X] + _difArray[V_X],
-        position[V_Y] + _difArray[V_Y],
-        position[V_Z] + _difArray[V_Z]
+      setPosition([__iPosition[V_X] + _difArray[V_X],
+        __iPosition[V_Y] + _difArray[V_Y],
+        __iPosition[V_Z] + _difArray[V_Z]
       ]);
     },
     
     changeTargetPosition: function(_difArray) {
-      setTargetPosition([target[V_X] + _difArray[V_X],
-        target[V_Y] + _difArray[V_Y],
-        target[V_Z] + _difArray[V_Z]
+      setTargetPosition([__iTarget[V_X] + _difArray[V_X],
+        __iTarget[V_Y] + _difArray[V_Y],
+        __iTarget[V_Z] + _difArray[V_Z]
       ]);
     },
     
     drawSurface: function(_x, _y, _xScale = 1, _yScale = 1, _angle = 0, _col = c_white, _alpha = 1) {
-      if (surface == undefined || !surface_exists(surface)) return;
-      draw_surface_ext(surface, _x, _y, _xScale, _yScale, _angle, _col, _alpha);
+      if (__iSurface == undefined || !surface_exists(__iSurface)) return;
+      draw_surface_ext(__iSurface, _x, _y, _xScale, _yScale, _angle, _col, _alpha);
     },
     
     getDirection: function() {
-      return direction;
+      return __iDirection;
     },
     
     getDirectionRight: function() {
-      return directionRight;
+      return __iDirectionRight;
     },
     
     getDirectionUp: function() {
-      return directionUp;
+      return __iDirectionUp;
     },
     
     getDistanceToPoint: function(_posArray) {
@@ -164,247 +164,248 @@ function use_ez3d_cam(_mode = EZ3DCam.mode_first_person) {
         _x = _pos[V_X],
         _y = _pos[V_Y],
         _z = _pos[V_Z],
-        _cx = position[V_X],
-        _cy = position[V_Y],
-        _cz = position[V_Z];
+        _cx = __iPosition[V_X],
+        _cy = __iPosition[V_Y],
+        _cz = __iPosition[V_Z];
       return point_distance_3d(_x, _y, _z, _cx, _cy, _cz);
     },
     
     getFov: function() {
-      return fov;
+      return __iFov;
     },
     
     getHeight: function() {
-      return height == undefined ? camera_get_view_height(view_camera[0]) : height;
+      return __iHeight == undefined ? camera_get_view_height(view_camera[0]) : __iHeight;
     },
     
     getMode: function() {
-      return mode;
+      return __iMode;
     },
     
     getOrientation: function() {
-      return [yaw, pitch, roll];
+      return [__iYaw, __iPitch, __iRoll];
     },
     
     getPitch: function() {
-      return pitch;
+      return __iPitch;
     },
     
     getPosition: function() {
-      return position;
+      return __iPosition;
     },
     
     getRoll: function() {
-      return roll;
+      return __iRoll;
     },
     
     getRotationMode: function() {
-      return rotationMode;
+      return __iRotationMode;
     },
     
     getTargetPosition: function() {
-      return target;
+      return __iTarget;
     },
     
     getWidth: function() {
-      return width == undefined ? camera_get_view_width(view_camera[0]) : width;
+      return __iWidth == undefined ? camera_get_view_width(view_camera[0]) : __iWidth;
     },
     
     getYaw: function() {
-      return yaw;
+      return __iYaw;
     },
     
     registerInstance: function(_id) {
       _id.visible = false;
-      array_push(instanceRegistry, _id);
+      array_push(__iInstanceRegistry, _id);
     },
     
     registerSkybox: function(_id) {
       _id.visible = false;
-      skyboxId = _id;
+      __iSkyboxId = _id;
     },
     
     setDistanceFromTarget: function(_dist) {
-      if (mode != EZ3DCam.mode_third_person || distance == _dist) exit;
-      distance = _dist;
-      hasMoved = true;
+      if (__iMode != EZ3DCam.mode_third_person || __iDistance == _dist) exit;
+      __iDistance = _dist;
+      __iHasMoved = true;
     },
     
     setFov: function(_fov) {
-      if (fov == _fov) exit;
-      fov = clamp(_fov, 1, 179);
-      hasMoved = true;
+      if (__iFov == _fov) exit;
+      __iFov = clamp(_fov, 1, 179);
+      __iHasMoved = true;
     },
     
     setMode: function(_mode) {
-      if (_mode == mode) exit;
-      mode = _mode;
-      hasMoved = true;
+      if (_mode == __iMode) exit;
+      __iMode = _mode;
+      __iHasMoved = true;
     },
     
     setOrientation: function(_array) {
-      if (yaw != _array[0]) {
-        hasMoved = true;
-        yaw = _array[0];
+      if (__iYaw != _array[0]) {
+        __iHasMoved = true;
+        __iYaw = _array[0];
       }
-      if (pitch != _array[1]) {
-        hasMoved = true;
-        pitch = _array[1];
+      if (__iPitch != _array[1]) {
+        __iHasMoved = true;
+        __iPitch = _array[1];
       }
-      if (roll != _array[2]) {
-        hasMoved = true;
-        roll = _array[2];
+      if (__iRoll != _array[2]) {
+        __iHasMoved = true;
+        __iRoll = _array[2];
       }
     },
     
-    set_position: function(_pos) {
-      if (array_equals(position, _pos)) exit;
-      hasMoved = true;
-      position = _pos;
-      distance = getDistanceToPoint(target);
+    setPosition: function(_pos) {
+      if (array_equals(__iPosition, _pos)) exit;
+      __iHasMoved = true;
+      __iPosition = _pos;
+      __iDistance = getDistanceToPoint(__iTarget);
     },
     
     setRenderTarget: function(_width = -1, _height = 1, _surfaceBgCol = c_black, _surfaceBgAlpha, _autoDrawEnabled = true) {
-      width = _width == -1 ? undefined : _width;
-      height = _height == -1 ? undefined : _height;
-      surfaceBgColor = _surfaceBgCol;
-      surfaceBgAlpha = _surfaceBgAlpha;
-      shouldDrawSurface = _autoDrawEnabled;
+      __iWidth = _width == -1 ? undefined : _width;
+      __iHeight = _height == -1 ? undefined : _height;
+      __iSurfaceBgColor = _surfaceBgCol;
+      __iSurfaceBgAlpha = _surfaceBgAlpha;
+      __iShouldDrawSurface = _autoDrawEnabled;
     },
     
     setRotationMode: function(_mode = EZ3DCam.rotation_local) {
-      rotationMode = _mode;
+      __iRotationMode = _mode;
     },
     
     setSize: function(_width, _height) {
-      if (width == _width && height == _height) exit;
-      width = _width;
-      height = _height;
-      surface_free(surface);
+      if (__iWidth == _width && __iHeight == _height) exit;
+      __iWidth = _width;
+      __iHeight = _height;
+      surface_free(__iSurface);
     },
     
     setTargetPosition: function(_posArray) {
-      if (array_equals(target, _posArray)) exit;
-      hasMoved = true;
-      target = _posArray;
-      if (mode == EZ3DCam.mode_track_target)
-        distance = getDistanceToPoint(target);
+      if (array_equals(__iTarget, _posArray)) exit;
+      __iHasMoved = true;
+      __iTarget = _posArray;
+      if (__iMode == EZ3DCam.mode_track_target)
+        __iDistance = getDistanceToPoint(__iTarget);
     },
     
     setZFar: function(_dist = 10000) {
-      if (zFar == _dist) exit;
-      zFar = max(_dist, 1);
-      hasMoved = true;
+      if (__iZFar == _dist) exit;
+      __iZFar = max(_dist, 1);
+      __iHasMoved = true;
     },
     
     getZFar: function() {
-      return zFar;
+      return __iZFar;
     },
     
     deregisterInstance: function(_id) {
-      for(var _i = 0; _i < array_length(instanceRegistry); _i++) {
-        if(instanceRegistry[_i] == _id) {
-          array_delete(instanceRegistry,_i,1);
+      var _len = array_length(__iInstanceRegistry);
+      for(var _i = 0; _i < _len; _i++) {
+        if(__iInstanceRegistry[_i] == _id) {
+          array_delete(__iInstanceRegistry,_i,1);
           break;
         }
       }
     },
     
-    rebuildCameraMatrix: function() {
+    __iRebuildCameraMatrix: function() {
       /// @description Rebuild Camera Matrix
-      prevViewWidth = camera_get_view_width(view_camera[0]);
-      prevViewHeight = camera_get_view_height(view_camera[0]);
-      if (width != undefined && height != undefined)
-        camera_set_view_size(view_camera[0], width, height);
+      __iPrevViewWidth = camera_get_view_width(view_camera[0]);
+      __iPrevViewHeight = camera_get_view_height(view_camera[0]);
+      if (__iWidth != undefined && __iHeight != undefined)
+        camera_set_view_size(view_camera[0], __iWidth, __iHeight);
         
       var _vw = camera_get_view_width(view_camera[0]);
       var _vh = camera_get_view_height(view_camera[0]);
       
-      switch (mode) {
+      switch (__iMode) {
         case EZ3DCam.mode_first_person:
-          if (!hasMoved) break;
-          if (rotationMode == EZ3DCam.rotation_local) {
-            angleQuat = quaternion_create();
-            angleQuat = quaternion_rotate_worldz(angleQuat, yaw);
-            angleQuat = quaternion_rotate_localz(angleQuat, pitch);
-            angleQuat = quaternion_rotate_localx(angleQuat, roll);
+          if (!__iHasMoved) break;
+          if (__iRotationMode == EZ3DCam.rotation_local) {
+            __IAngleQuat = quaternion_create();
+            __IAngleQuat = quaternion_rotate_worldz(__IAngleQuat, __iYaw);
+            __IAngleQuat = quaternion_rotate_localz(__IAngleQuat, __iPitch);
+            __IAngleQuat = quaternion_rotate_localx(__IAngleQuat, __iRoll);
           } else {
             var _pitch = quaternion_create(),
                 _yaw = quaternion_create(),
                 _roll = quaternion_create();
-            _pitch = quaternion_rotate_localz(_pitch, pitch);
-            _yaw = quaternion_rotate_localy(_yaw, yaw);
-            _roll = quaternion_rotate_localx(_roll, roll);
-            pitch = 0;
-            yaw = 0;
-            roll = 0;
-            angleQuat = quaternion_combine(angleQuat, _pitch, _yaw, _roll);
+            _pitch = quaternion_rotate_localz(_pitch, __iPitch);
+            _yaw = quaternion_rotate_localy(_yaw, __iYaw);
+            _roll = quaternion_rotate_localx(_roll, __iRoll);
+            __iPitch = 0;
+            __iYaw = 0;
+            __iRoll = 0;
+            __IAngleQuat = quaternion_combine(__IAngleQuat, _pitch, _yaw, _roll);
           }
-          angleMatrix = quaternion_matrix(angleQuat);
-          direction = matrix_to_vec3(matrix_combine(matrix_build_translation([1, 0, 0]), angleMatrix));
-          direction = vec3_normalize(direction);
-          directionRight = matrix_to_vec3(matrix_combine(matrix_build_translation([0, -1, 0]), angleMatrix));
-          directionUp = matrix_to_vec3(matrix_combine(matrix_build_translation([0, 0, 1]), angleMatrix));
-          target = vec3_add(direction, position);
+          __iAngleMatrix = quaternion_matrix(__IAngleQuat);
+          __iDirection = matrix_to_vec3(matrix_combine(matrix_build_translation([1, 0, 0]), __iAngleMatrix));
+          __iDirection = vec3_normalize(__iDirection);
+          __iDirectionRight = matrix_to_vec3(matrix_combine(matrix_build_translation([0, -1, 0]), __iAngleMatrix));
+          __iDirectionUp = matrix_to_vec3(matrix_combine(matrix_build_translation([0, 0, 1]), __iAngleMatrix));
+          __iTarget = vec3_add(__iDirection, __iPosition);
         break;
           
         case EZ3DCam.mode_third_person:
-          if (rotationMode == EZ3DCam.rotation_local) {
-            angleQuat = quaternion_create();
-            angleQuat = quaternion_rotate_worldz(angleQuat, yaw);
-            angleQuat = quaternion_rotate_localz(angleQuat, pitch);
-            angleQuat = quaternion_rotate_localx(angleQuat, roll);
+          if (__iRotationMode == EZ3DCam.rotation_local) {
+            __IAngleQuat = quaternion_create();
+            __IAngleQuat = quaternion_rotate_worldz(__IAngleQuat, __iYaw);
+            __IAngleQuat = quaternion_rotate_localz(__IAngleQuat, __iPitch);
+            __IAngleQuat = quaternion_rotate_localx(__IAngleQuat, __iRoll);
           } else {
             var _pitch = quaternion_create(),
                 _yaw = quaternion_create(),
                 _roll = quaternion_create();
-            _pitch = quaternion_rotate_localz(_pitch, pitch);
-            _yaw = quaternion_rotate_localy(_yaw, yaw);
-            _roll = quaternion_rotate_localx(_roll, -roll);
-            pitch = 0;
-            yaw = 0;
-            roll = 0;
-            angleQuat = quaternion_combine(angleQuat, _pitch, _yaw, _roll);
+            _pitch = quaternion_rotate_localz(_pitch, __iPitch);
+            _yaw = quaternion_rotate_localy(_yaw, __iYaw);
+            _roll = quaternion_rotate_localx(_roll, -__iRoll);
+            __iPitch = 0;
+            __iYaw = 0;
+            __iRoll = 0;
+            __IAngleQuat = quaternion_combine(__IAngleQuat, _pitch, _yaw, _roll);
           }
-          angleMatrix = quaternion_matrix(angleQuat);
-          var _matrix = matrix_combine(matrix_build_translation([distance, 0, 0]), angleMatrix, matrix_build_translation(target));
-          position = [_matrix[M_X], _matrix[M_Y], _matrix[M_Z]];
-          direction = matrix_to_vec3(matrix_combine(matrix_build_translation([-1, 0, 0]), angleMatrix));
-          directionRight = matrix_to_vec3(matrix_combine(matrix_build_translation([0, 1, 0]), angleMatrix));
-          directionUp = matrix_to_vec3(matrix_combine(matrix_build_translation([0, 0, 1]), angleMatrix));
+          __iAngleMatrix = quaternion_matrix(__IAngleQuat);
+          var _matrix = matrix_combine(matrix_build_translation([__iDistance, 0, 0]), __iAngleMatrix, matrix_build_translation(__iTarget));
+          __iPosition = [_matrix[M_X], _matrix[M_Y], _matrix[M_Z]];
+          __iDirection = matrix_to_vec3(matrix_combine(matrix_build_translation([-1, 0, 0]), __iAngleMatrix));
+          __iDirectionRight = matrix_to_vec3(matrix_combine(matrix_build_translation([0, 1, 0]), __iAngleMatrix));
+          __iDirectionUp = matrix_to_vec3(matrix_combine(matrix_build_translation([0, 0, 1]), __iAngleMatrix));
         break;
           
         case EZ3DCam.mode_track_target:
           //calculate camera properties
-          var _tar = target;
-          var _pos = position;
-          distance = point_distance_vec3(_tar, _pos)
-          yaw = -point_direction(_pos[V_X], _pos[V_Y], _tar[V_X], _tar[V_Y]);
-          var _ratio = (_pos[V_Z] - _tar[V_Z]) / distance;
-          pitch = radtodeg(arcsin(_ratio));
+          var _tar = __iTarget;
+          var _pos = __iPosition;
+          __iDistance = point_distance_vec3(_tar, _pos)
+          __iYaw = -point_direction(_pos[V_X], _pos[V_Y], _tar[V_X], _tar[V_Y]);
+          var _ratio = (_pos[V_Z] - _tar[V_Z]) / __iDistance;
+          __iPitch = radtodeg(arcsin(_ratio));
           var _angle = quaternion_create();
-          _angle = quaternion_rotate_worldz(_angle, yaw);
-          _angle = quaternion_rotate_localz(_angle, pitch);
+          _angle = quaternion_rotate_worldz(_angle, __iYaw);
+          _angle = quaternion_rotate_localz(_angle, __iPitch);
             
-          _angle = quaternion_rotate_localx(_angle, roll);
-          angleQuat = _angle;
-          angleMatrix = quaternion_matrix(_angle);
-          direction = matrix_to_vec3(matrix_combine(matrix_build_translation([1, 0, 0]), angleMatrix));
-          directionRight = matrix_to_vec3(matrix_combine(matrix_build_translation([0, -1, 0]), angleMatrix));
-          directionUp = matrix_to_vec3(matrix_combine(matrix_build_translation([0, 0, 1]), angleMatrix));
+          _angle = quaternion_rotate_localx(_angle, __iRoll);
+          __IAngleQuat = _angle;
+          __iAngleMatrix = quaternion_matrix(_angle);
+          __iDirection = matrix_to_vec3(matrix_combine(matrix_build_translation([1, 0, 0]), __iAngleMatrix));
+          __iDirectionRight = matrix_to_vec3(matrix_combine(matrix_build_translation([0, -1, 0]), __iAngleMatrix));
+          __iDirectionUp = matrix_to_vec3(matrix_combine(matrix_build_translation([0, 0, 1]), __iAngleMatrix));
         break;
       }
       
-      var _up = matrix_combine(matrix_build_translation(up), angleMatrix),
+      var _up = matrix_combine(matrix_build_translation(__iUp), __iAngleMatrix),
           _aspect = _vw / _vh,
-          _pos = position;
+          _pos = __iPosition;
       
-      viewMatrix = matrix_build_lookat(_pos[V_X], _pos[V_Y], _pos[V_Z],
-        _pos[V_X] + direction[V_X], _pos[V_Y] + direction[V_Y], _pos[V_Z] + direction[V_Z],
+      __iViewMatrix = matrix_build_lookat(_pos[V_X], _pos[V_Y], _pos[V_Z],
+        _pos[V_X] + __iDirection[V_X], _pos[V_Y] + __iDirection[V_Y], _pos[V_Z] + __iDirection[V_Z],
         _up[M_X], _up[M_Y], _up[M_Z]);
-      progMatrix = matrix_build_projection_perspective_fov(fov, _aspect, 1, zFar);
+      __iProgMatrix = matrix_build_projection_perspective_fov(__iFov, _aspect, 1, __iZFar);
     },
-    timer: 0
+
   }
   
   //Standard vertex format. Feel free to replace with your own if necessary
@@ -413,12 +414,12 @@ function use_ez3d_cam(_mode = EZ3DCam.mode_first_person) {
   vertex_format_add_normal();
   vertex_format_add_colour();
   vertex_format_add_texcoord();
-  cam.vertexFormat = vertex_format_end();
+  _cam.vertexFormat = vertex_format_end();
   
   if(_mode != EZ3DCam.mode_first_person)
-    cam.setMode(_mode);
+    _cam.setMode(_mode);
   
-  return cam;  
+  return _cam;  
 }
 
 #region Matrix Extension Functions

@@ -30,7 +30,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "EZ3DCam - REQUIRED",
-    "path": "folders/Objects/EZ3DCam - REQUIRED.yy",
+    "name": "EZ3DCam",
+    "path": "EZ3DCam.yyp",
   },
 }

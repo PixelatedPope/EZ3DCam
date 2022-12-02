@@ -31,6 +31,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "3rd Person",
-    "path": "folders/Objects/3rd Person.yy",
+    "path": "folders/Demos/3rd Person.yy",
   },
 }

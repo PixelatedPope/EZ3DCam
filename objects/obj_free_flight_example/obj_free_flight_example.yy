@@ -31,6 +31,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Free Flight",
-    "path": "folders/Objects/Free Flight.yy",
+    "path": "folders/Demos/Free Flight.yy",
   },
 }

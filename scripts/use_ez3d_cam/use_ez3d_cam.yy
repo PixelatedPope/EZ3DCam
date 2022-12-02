@@ -5,7 +5,7 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "EZ3DCam - REQUIRED",
-    "path": "folders/Scripts/EZ3DCam - REQUIRED.yy",
+    "name": "EZ3DCam",
+    "path": "EZ3DCam.yyp",
   },
 }

@@ -35,6 +35,6 @@
   "overriddenProperties": [],
   "parent": {
     "name": "2D 3D Mix",
-    "path": "folders/Objects/2D 3D Mix.yy",
+    "path": "folders/Demos/2D 3D Mix.yy",
   },
 }
