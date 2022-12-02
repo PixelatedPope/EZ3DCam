@@ -5,16 +5,16 @@ var _spd = 5;
 
 //Camera Relative Movement
 var _forward = objEz3dCam.ezCam.getDirection();
-var _right = objEz3dCam.ezCam.getDirectionRight();
+var _left = objEz3dCam.ezCam.getDirectionLeft();
 //var _up = [0,0,0];
 
 //Ignore Z
 _forward[V_Z]=0;
-_right[V_Z]=0;
+_left[V_Z]=0;
 _forward = vec3_scale(_forward,_spd * _vert);
-_right = vec3_scale(_right,_spd * _hori);
+_left = vec3_scale(_left,_spd * _hori);
 
-var _move = vec3_add(_forward,_right);//,_up);
+var _move = vec3_add(_forward,_left);//,_up);
 x+= _move[V_X];
 y+= _move[V_Y];
 //z+=_move[V_Z];

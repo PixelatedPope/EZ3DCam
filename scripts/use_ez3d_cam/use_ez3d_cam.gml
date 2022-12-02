@@ -90,7 +90,7 @@ function use_ez3d_cam(_mode = EZ3DCam.mode_first_person) {
     __iTarget: V_ZERO,
     __iPosition: V_ZERO,
     __iDirection: V_ZERO,
-    __iDirectionRight: V_ZERO,
+    __iDirectionLeft: V_ZERO,
     __iDirectionUp: V_ZERO,
     __iUp: matrix_build_translation([0, 0, 1]),
     __iDistance: 1,
@@ -151,8 +151,8 @@ function use_ez3d_cam(_mode = EZ3DCam.mode_first_person) {
       return __iDirection;
     },
     
-    getDirectionRight: function() {
-      return __iDirectionRight;
+    getDirectionLeft: function() {
+      return __iDirectionLeft;
     },
     
     getDirectionUp: function() {
@@ -344,7 +344,7 @@ function use_ez3d_cam(_mode = EZ3DCam.mode_first_person) {
           __iAngleMatrix = quaternion_matrix(__IAngleQuat);
           __iDirection = matrix_to_vec3(matrix_combine(matrix_build_translation([1, 0, 0]), __iAngleMatrix));
           __iDirection = vec3_normalize(__iDirection);
-          __iDirectionRight = matrix_to_vec3(matrix_combine(matrix_build_translation([0, -1, 0]), __iAngleMatrix));
+          __iDirectionLeft = matrix_to_vec3(matrix_combine(matrix_build_translation([0, -1, 0]), __iAngleMatrix));
           __iDirectionUp = matrix_to_vec3(matrix_combine(matrix_build_translation([0, 0, 1]), __iAngleMatrix));
           __iTarget = vec3_add(__iDirection, __iPosition);
         break;
@@ -371,7 +371,7 @@ function use_ez3d_cam(_mode = EZ3DCam.mode_first_person) {
           var _matrix = matrix_combine(matrix_build_translation([__iDistance, 0, 0]), __iAngleMatrix, matrix_build_translation(__iTarget));
           __iPosition = [_matrix[M_X], _matrix[M_Y], _matrix[M_Z]];
           __iDirection = matrix_to_vec3(matrix_combine(matrix_build_translation([-1, 0, 0]), __iAngleMatrix));
-          __iDirectionRight = matrix_to_vec3(matrix_combine(matrix_build_translation([0, 1, 0]), __iAngleMatrix));
+          __iDirectionLeft = matrix_to_vec3(matrix_combine(matrix_build_translation([0, 1, 0]), __iAngleMatrix));
           __iDirectionUp = matrix_to_vec3(matrix_combine(matrix_build_translation([0, 0, 1]), __iAngleMatrix));
         break;
           
@@ -391,7 +391,7 @@ function use_ez3d_cam(_mode = EZ3DCam.mode_first_person) {
           __IAngleQuat = _angle;
           __iAngleMatrix = quaternion_matrix(_angle);
           __iDirection = matrix_to_vec3(matrix_combine(matrix_build_translation([1, 0, 0]), __iAngleMatrix));
-          __iDirectionRight = matrix_to_vec3(matrix_combine(matrix_build_translation([0, -1, 0]), __iAngleMatrix));
+          __iDirectionLeft = matrix_to_vec3(matrix_combine(matrix_build_translation([0, -1, 0]), __iAngleMatrix));
           __iDirectionUp = matrix_to_vec3(matrix_combine(matrix_build_translation([0, 0, 1]), __iAngleMatrix));
         break;
       }

@@ -1,6 +1,6 @@
 /// @description
 /*All the EZ3DCam settings are "default" right now. 
- This is a basic First Person camera at 0,0,0 looking "right".
+ This is a basic 3D cameraat 0,0,0 looking "right".
  But what is "right"?
  objEz3dCam.ezCam's coordinate system is the same as your room's. So "right" is x+
  so if we want to create objects "in front" of the camera, we create them
