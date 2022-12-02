@@ -1,6 +1,6 @@
 /// @description Insert description here
-
 event_inherited();
+light_enabled = false;
 rotation = [0,0,-90] // -90 to face the camera.
 face_dir=0;
 

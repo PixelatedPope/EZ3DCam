@@ -1,12 +1,11 @@
 {
+  "resourceType": "GMScript",
+  "resourceVersion": "1.0",
+  "name": "use_ez3d_cam",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
     "name": "EZ3DCam - REQUIRED",
     "path": "folders/Scripts/EZ3DCam - REQUIRED.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "use_ez3d_cam",
-  "tags": [],
-  "resourceType": "GMScript",
 }

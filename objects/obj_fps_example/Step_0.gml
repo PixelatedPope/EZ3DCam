@@ -1,9 +1,6 @@
 /// @description Camera Controls
 window_set_caption("FPS: "+string(fps));
 
-if(keyboard_check_pressed(ord("R")))
- objEz3dCam.ezCam.setSize(objEz3dCam.ezCam.getWidth() != VIEW_W ? VIEW_W : window_get_width(),
-          objEz3dCam.ezCam.getHeight() != VIEW_H ? VIEW_H : window_get_height());
 //Zoom in and out
 objEz3dCam.ezCam.changeFov((mouse_wheel_down()-mouse_wheel_up())*3);
 

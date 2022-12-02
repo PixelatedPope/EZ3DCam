@@ -15,9 +15,4 @@ throttle = clamp(throttle,0,5);
 var _forward = vec3_scale(objEz3dCam.ezCam.getDirection(),throttle);
 
 objEz3dCam.ezCam.changePosition(_forward);
-objEz3dCam.ezCam.changeOrientation([_yaw,_pitch,_roll]);
-
-if(keyboard_check_pressed(ord("R")))
- objEz3dCam.ezCam.setSize(objEz3dCam.ezCam.getWidth() != VIEW_W ? VIEW_W : window_get_width(),
-          objEz3dCam.ezCam.getHeight() != VIEW_H ? VIEW_H : window_get_height());
-	
+objEz3dCam.ezCam.changeOrientation([_yaw,_pitch,_roll]);	

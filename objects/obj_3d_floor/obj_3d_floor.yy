@@ -1,10 +1,14 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_3d_floor",
   "spriteId": {
     "name": "spr_ground",
     "path": "sprites/spr_ground/spr_ground.yy",
   },
   "solid": false,
   "visible": true,
+  "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
@@ -24,7 +28,7 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_3d_floor","path":"objects/obj_3d_floor/obj_3d_floor.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -32,8 +36,4 @@
     "name": "Shared",
     "path": "folders/Objects/Shared.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_3d_floor",
-  "tags": [],
-  "resourceType": "GMObject",
 }

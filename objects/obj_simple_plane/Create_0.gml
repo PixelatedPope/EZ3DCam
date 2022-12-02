@@ -3,7 +3,6 @@
 event_inherited();
 rotation = [0,0,-90] // -90 to face the camera which.
 scale = [.25,.25,.25];
-light_enabled=true;
 fog_color = c_black;
 //The most difficult part of working with 3D is building your
 //3D "models". This is an example of a simple textured plane

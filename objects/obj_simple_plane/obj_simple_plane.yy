@@ -1,10 +1,14 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_simple_plane",
   "spriteId": {
     "name": "spr_ace",
     "path": "sprites/spr_ace/spr_ace.yy",
   },
   "solid": false,
   "visible": true,
+  "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
@@ -24,8 +28,8 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_simple_plane","path":"objects/obj_simple_plane/obj_simple_plane.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"obj_simple_plane","path":"objects/obj_simple_plane/obj_simple_plane.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -33,8 +37,4 @@
     "name": "Simple Plane",
     "path": "folders/Objects/Simple Plane.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_simple_plane",
-  "tags": [],
-  "resourceType": "GMObject",
 }

@@ -1,10 +1,14 @@
 {
+  "resourceType": "GMObject",
+  "resourceVersion": "1.0",
+  "name": "obj_character",
   "spriteId": {
     "name": "spr_char_south",
     "path": "sprites/spr_char_south/spr_char_south.yy",
   },
   "solid": false,
   "visible": true,
+  "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
@@ -24,11 +28,11 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_character","path":"objects/obj_character/obj_character.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"obj_character","path":"objects/obj_character/obj_character.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":2,"eventType":3,"collisionObjectId":null,"parent":{"name":"obj_character","path":"objects/obj_character/obj_character.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"obj_character","path":"objects/obj_character/obj_character.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":12,"collisionObjectId":null,"parent":{"name":"obj_character","path":"objects/obj_character/obj_character.yy",},"resourceVersion":"1.0","name":null,"tags":[],"resourceType":"GMEvent",},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":2,"eventType":3,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":12,"collisionObjectId":null,},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -36,8 +40,4 @@
     "name": "3rd Person",
     "path": "folders/Objects/3rd Person.yy",
   },
-  "resourceVersion": "1.0",
-  "name": "obj_character",
-  "tags": [],
-  "resourceType": "GMObject",
 }

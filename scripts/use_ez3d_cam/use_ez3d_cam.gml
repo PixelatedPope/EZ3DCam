@@ -32,8 +32,7 @@ function use_ez3d_cam(_mode = EZ3DCam.mode_first_person) {
 
       #region Draw 3D Objects
 
-      //draw_light_define_ambient(c_black);
-      draw_set_lighting(true);
+      draw_set_lighting(false);
       draw_light_define_point(0,position[V_X],position[V_Y],position[V_Z],1500,c_white);
       draw_light_enable(0,true);
 
@@ -65,7 +64,7 @@ function use_ez3d_cam(_mode = EZ3DCam.mode_first_person) {
       gpu_set_alphatestenable(false);
       matrix_set(matrix_world,matrix_build_identity()); 
 
-      _ortho_proj_mat[5] = abs(_ortho_proj_mat[5]); //Why? Because GM is kinda dumb.
+      //_ortho_proj_mat[5] = abs(_ortho_proj_mat[5]); //Why? Because GM is kinda dumb.
       camera_set_view_mat(_cam, _ortho_view_mat);
       camera_set_proj_mat(_cam, _ortho_proj_mat);
       camera_set_view_size(_cam, prevViewWidth, prevViewHeight);
@@ -303,7 +302,7 @@ function use_ez3d_cam(_mode = EZ3DCam.mode_first_person) {
     },
     
     deregisterInstance: function(_id) {
-      for(var _i = 0; _i < array_length(instanceRegistry) _i++) {
+      for(var _i = 0; _i < array_length(instanceRegistry); _i++) {
         if(instanceRegistry[_i] == _id) {
           array_delete(instanceRegistry,_i,1);
           break;
