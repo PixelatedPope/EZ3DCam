@@ -11,10 +11,9 @@ var _buff = vertex_create_buffer();
 var _tile_count = 250;
 
 light_enabled = false;
-fog_enabled = os_browser == browser_not_a_browser;
-fog_end = 1000;
+fog_end = 3000;
 fog_start = 600;
-fog_color = $a5866a;
+fog_color = #72a3c0;
 
 vertex_begin(_buff,objEz3dCam.ezCam.vertexFormat);
 for(var _x = 0; _x+_w < _w*_tile_count; _x+=_w)
