@@ -1,2 +1,9 @@
 /// @description
-room_goto(room == room_last ? 1 : room+1);
+if (room = rm3rdPersonExample)
+{
+	room_goto(rmSimplePlaneExample);
+}
+else
+{
+	room_goto_next();
+}

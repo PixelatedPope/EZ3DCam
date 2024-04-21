@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "round_n",
-  "isDnD": false,
-  "isCompatibility": false,
-  "parent": {
-    "name": "General Helpers",
-    "path": "folders/Scripts/General Helpers.yy",
+  "$GMScript":"",
+  "%Name":"round_n",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"round_n",
+  "parent":{
+    "name":"General Helpers",
+    "path":"folders/Scripts/General Helpers.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "draw_text_transformed_gpu",
-  "isDnD": false,
-  "isCompatibility": false,
-  "parent": {
-    "name": "General Helpers",
-    "path": "folders/Scripts/General Helpers.yy",
+  "$GMScript":"",
+  "%Name":"draw_text_transformed_gpu",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"draw_text_transformed_gpu",
+  "parent":{
+    "name":"General Helpers",
+    "path":"folders/Scripts/General Helpers.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "wrap",
-  "isDnD": false,
-  "isCompatibility": false,
-  "parent": {
-    "name": "General Helpers",
-    "path": "folders/Scripts/General Helpers.yy",
+  "$GMScript":"",
+  "%Name":"wrap",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"wrap",
+  "parent":{
+    "name":"General Helpers",
+    "path":"folders/Scripts/General Helpers.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }
