@@ -25,7 +25,6 @@
     {"name":"draw_text_transformed_gpu","order":1,"path":"scripts/draw_text_transformed_gpu/draw_text_transformed_gpu.yy",},
     {"name":"wrap","order":2,"path":"scripts/wrap/wrap.yy",},
     {"name":"vertex_position_3d_vec","order":3,"path":"scripts/vertex_position_3d_vec/vertex_position_3d_vec.yy",},
-    {"name":"display_write_all_specs","order":4,"path":"scripts/display_write_all_specs/display_write_all_specs.yy",},
     {"name":"draw_set_text_alignment","order":5,"path":"scripts/draw_set_text_alignment/draw_set_text_alignment.yy",},
     {"name":"vertex_buffer_create_cylinder","order":1,"path":"scripts/vertex_buffer_create_cylinder/vertex_buffer_create_cylinder.yy",},
     {"name":"triangle_normal","order":2,"path":"scripts/triangle_normal/triangle_normal.yy",},

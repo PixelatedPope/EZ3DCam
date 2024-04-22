@@ -59,7 +59,6 @@
     {"id":{"name":"draw_text_transformed_gpu","path":"scripts/draw_text_transformed_gpu/draw_text_transformed_gpu.yy",},},
     {"id":{"name":"wrap","path":"scripts/wrap/wrap.yy",},},
     {"id":{"name":"vertex_position_3d_vec","path":"scripts/vertex_position_3d_vec/vertex_position_3d_vec.yy",},},
-    {"id":{"name":"display_write_all_specs","path":"scripts/display_write_all_specs/display_write_all_specs.yy",},},
     {"id":{"name":"draw_set_text_alignment","path":"scripts/draw_set_text_alignment/draw_set_text_alignment.yy",},},
     {"id":{"name":"vertex_buffer_create_mapped_cube","path":"scripts/vertex_buffer_create_mapped_cube/vertex_buffer_create_mapped_cube.yy",},},
     {"id":{"name":"vertex_buffer_create_cylinder","path":"scripts/vertex_buffer_create_cylinder/vertex_buffer_create_cylinder.yy",},},
