@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"use_ez3d_cam",
   "parent":{
-    "name":"EZ3DCam",
-    "path":"EZ3DCam.yyp",
+    "name":"EZCam",
+    "path":"folders/EZCam.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
