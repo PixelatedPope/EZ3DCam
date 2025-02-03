@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"use_ez3d_cam",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"use_ez3d_cam",
+  "parent":{
+    "name":"EZ3DCam",
+    "path":"EZ3DCam.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
